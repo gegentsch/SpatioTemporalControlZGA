@@ -3739,13 +3739,13 @@ SpatioTempPercTable( gene.expr=perc.tpm$maxWNBLOF.st8to10.uni.mean, pdf.name="ma
 **Effect of Wnt LOF on ZGA** (Figure 2E)
 
 Download plots and percentage table of down-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes): 
-<a href="./suppl_files/WntLOF.pdf">summary</a> |  
-<a href="./suppl_files/WntLOF_st6.pdf">32-cell</a> |  
-<a href="./suppl_files/WntLOF_st7.pdf">128-cell</a> |  
-<a href="./suppl_files/WntLOF_st8.pdf">1,024-cell</a> |  
-<a href="./suppl_files/WntLOF_st8.5.pdf">MBT</a> |  
+<a href="./suppl_files/WntLOF.pdf">summary</a> | 
+<a href="./suppl_files/WntLOF_st6.pdf">32-cell</a> | 
+<a href="./suppl_files/WntLOF_st7.pdf">128-cell</a> | 
+<a href="./suppl_files/WntLOF_st8.pdf">1,024-cell</a> | 
+<a href="./suppl_files/WntLOF_st8.5.pdf">MBT</a> | 
 <a href="./suppl_files/WntLOF_down_spatioAnVg_devSt_percTable.pdf">animal-vegetal</a> | 
-<a href="./suppl_files/WntLOF_down_spatioDV_devSt_percTable.pdf">dorso-ventral</a>.  
+<a href="./suppl_files/WntLOF_down_spatioDV_devSt_percTable.pdf">dorso-ventral</a>.
 
 ***
 
@@ -3784,7 +3784,7 @@ Download plots and percentage table of down-regulaged genes separated by time an
 <a href="./suppl_files/mPSLOF_st8.pdf">1,024-cell</a> | 
 <a href="./suppl_files/mPSLOF_st8.5.pdf">MBT</a> | 
 <a href="./suppl_files/mPSLOF_down_spatioAnVg_devSt_percTable.pdf">animal-vegetal</a> | 
-<a href="./suppl_files/mPSLOF_down_spatioDV_devSt_percTable.pdf">dorso-ventral</a>.  
+<a href="./suppl_files/mPSLOF_down_spatioDV_devSt_percTable.pdf">dorso-ventral</a>.
 
 ***
 
