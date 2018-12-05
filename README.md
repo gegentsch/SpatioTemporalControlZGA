@@ -514,10 +514,10 @@ zga$h3k36me3            <- ifelse(row.names(zga) %in% h3k36me3.mark$gene.id, 1, 
 Genes were considered active when RNAPII enrichments along their full length (see thresholds below) and corresponding transcripts (≥0.1 TPM) were simultaneously detected. Transcript levels were calculated over three consecutive time points +/- 1 h from the developmental stage of RNAPII profiling. RNAPII enrichment covered ≥80% of the mappable gene body and reached at least one of the following thresholds: (1) 2.6-fold, (2) 1.8-fold and 1.4-fold at the next or previous stage, (3) 1.4-fold and 1.8-fold at the next or previous stage, or (4) 1.4-fold over three consecutive stages.
 
 ```{r ZGA STATISTICS, eval=FALSE}
-# FUNCTION: Transcript level: min. 0.1 TPM on average over 3 consecutive time points (1 hour window)
+# FUNCTION: min. 0.1 TPM on average over 3 consecutive time points (1 hour window)
 tpm.filter <- function(x) which(apply(x, 1, function(y) any( stats::filter(y,rep(1,3)) / 3 >= 0.1 )))
 
-# FUNCTION: RNAPII enrichment
+# FUNCTIONS: RNAPII enrichment
 pol2.three.fold <- function(x) apply(x, 1, function(y) {len <- sum(!is.na(y)); sum(y[!is.na(y)] > 2.6) >= 0.8*len} )
 pol2.two.fold <- function(x) apply(x, 1, function(y) {len <- sum(!is.na(y)); sum(y[!is.na(y)] > 1.8) >= 0.8*len} )
 pol2.onehalf.fold <- function(x) apply(x, 1, function(y) {len <- sum(!is.na(y)); sum(y[!is.na(y)] > 1.4) >= 0.8*len} )
@@ -843,7 +843,7 @@ pdf("FigS1D_pol2vs4sU_sprCor.pdf", width=5, height=5)
     heatmap.2( spr.cor,Rowv=F,Colv=F,dendrogram="none",breaks=bre.r.val,col=col.r.val,key=T,symkey=T,density.info="none",trace="none",cellnote=round(spr.cor,2),notecol="black",notecex=2, cexRow=1, cexCol=1, margin=c(10,10))
 dev.off()
 ```
-Download Spearman correlation heatmap: <a href="./suppl_files/FigS1D_pol2vs4sU_sprCor.pdf">PDF</a>
+Download Spearman correlation heatmap: <a href="./suppl_files/FigS1D_pol2vs4sU_sprCor.pdf">PDF</a>.
 
 #### 2.7  Chromatin and RNA dynamics
 
@@ -907,13 +907,12 @@ Chromatin and RNA dynamics (Figure 1B and S1A)
 <p align="center">
 <img src="./suppl_files/Fig1B_S1A_pol2_st6to12_h3x_rzpaRNAei_4sU_mat.png" width="100%">
 </p>
-Download ZGA heatmap: <a href="./suppl_files/Fig1B_S1A_pol2_st6to12_h3x_rzpaRNAei_4sU_mat.png">PNG</a>
-Download color bars (PDF): <a href="./suppl_files/Pol2_colorbar.pdf">RNAPII (fold enrichment)</a> | 
-<a href="./suppl_files/H3K4me3_colorbar.pdf">H3K4me3 (fold enrichment)</a> |  
-<a href="./suppl_files/H3K36me3_colorbar.pdf">H3K36me3 (fold enrichment)</a> |
-<a href="./suppl_files/RNA_colorbar.pdf">Relative RNA level</a> |  
-<a href="./suppl_files/4sU_colorbar.pdf">4sU (fold enrichment)</a> |  
-<a href="./suppl_files/Mat_colorbar.pdf">Maternal contribution (TPM)</a>
+Download <a href="./suppl_files/Fig1B_S1A_pol2_st6to12_h3x_rzpaRNAei_4sU_mat.png">ZGA heatmap</a> and the color bars (PDF) for <a href="./suppl_files/Pol2_colorbar.pdf">RNAPII (fold enrichment)</a>,  
+<a href="./suppl_files/H3K4me3_colorbar.pdf">H3K4me3 (fold enrichment)</a>,   
+<a href="./suppl_files/H3K36me3_colorbar.pdf">H3K36me3 (fold enrichment)</a>, 
+<a href="./suppl_files/RNA_colorbar.pdf">relative RNA level</a>,   
+<a href="./suppl_files/4sU_colorbar.pdf">4sU tagging (fold enrichment)</a> and   
+<a href="./suppl_files/Mat_colorbar.pdf">maternal contribution (TPM)</a>.
 
 This ZGA heatmap image contains the following chromatin or RNA profiles from left to right:
 
@@ -974,7 +973,7 @@ dev.off()
 
 Transcript feature levels (mean +/- SD) during ZGA (Figure S1B): red, exonic (total RNA), blue, intronic (total RNA), and yellow, intronic (poly(A) RNA). Download transcript meta-profile (log~10~ scale): 
 <a href="./suppl_files/FigS1B_meta_zyg_matRNA_smooth_log.pdf">RNAPII+ genes</a> | 
-<a href="./suppl_files/FigS1B_meta_matRNA_smooth_log.pdf">RNAPII- genes</a>
+<a href="./suppl_files/FigS1B_meta_matRNA_smooth_log.pdf">RNAPII- genes</a>.
 
 
 Venn diagram of temporal ZGA
@@ -996,11 +995,9 @@ pdf("zga_venn_diagram.pdf")
 vennDiagram( vennCounts( pol2.positive ))
 dev.off()
 ```
-Download <a href="./suppl_files/zga_venn_diagram.pdf">Venn diagram</a> showing overlap of genes active at the 32/128-cell stage, the 1,024-cell stage, the MBT, the mid-gastrula and late gastrula stage.
-
+Download <a href="./suppl_files/zga_venn_diagram.pdf">Venn diagram</a> showing the overlap of genes active at the 32/128-cell stage, the 1,024-cell stage, the MBT, the mid-gastrula and the late gastrula stage.
 
 ```{r RNAPII META-PROFILES, eval=FALSE}
-
 p6.1 <- read.table("./chromatin/pol2_st6_xt71_5kbTSS2kb.txt.gz", header=TRUE, row.names="Gene")
 p6.2 <- read.table("./chromatin/pol2_st6_xt71_2kbTTS5kb.txt.gz", header=TRUE, row.names="Gene")
 p7.1 <- read.table("./chromatin/pol2_st7_xt71_5kbTSS2kb.txt.gz", header=TRUE, row.names="Gene")
@@ -1054,8 +1051,8 @@ pdf("FigS1L_meta_pol2_zygRNA_st6to12p_log", width=3, height=8)
 dev.off()
 ```
 
-Metaprofile (mean +/- SD) for RNAPII and input (negative control) at zygotic genes (Figure S1L): RNAPII shows log normal distribution. Thus, log norm metrics were used. Download RNAPII meta-profile: <a href="./suppl_files/FigS1L_meta_pol2_zygRNA_st6to12p_log.pdf">PDF</a>.
-
+Metaprofile (mean +/- SD) for RNAPII and input (negative control) at zygotic genes (Figure S1L). RNAPII shows log normal distribution. Thus, log norm metrics were used. Download RNAPII meta-profile: 
+<a href="./suppl_files/FigS1L_meta_pol2_zygRNA_st6to12p_log.pdf">PDF</a>.
 
 #### 2.8  Hilbert curves
 
@@ -1118,11 +1115,11 @@ dev.off()
 ```
 
 <p align="left">
-<img src="./suppl_files/Fig1C_pol2_st7_xt91_hilbert.png" width="33%">
-<img src="./suppl_files/Fig1C_pol2_st8p_xt91_hilbert.png" width="33%">
-<img src="./suppl_files/Fig1C_chrom_xt91_hilbert.png" width="33%">
+<img src="./suppl_files/Fig1C_pol2_st7_xt91_hilbert.png" width="30%">
+<img src="./suppl_files/Fig1C_pol2_st8p_xt91_hilbert.png" width="30%">
+<img src="./suppl_files/Fig1C_chrom_xt91_hilbert.png" width="30%">
 </p>
-Download RNAPII Hilbert curves: <a href="./suppl_files/Fig1C_pol2_st7_xt91_hilbert.png">128-cell</a> | <a href="./suppl_files/Fig1C_pol2_st8p_xt91_hilbert.png">MBT</a> | <a href="./suppl_files/Fig1C_chrom_xt91_hilbert.png">gene examples</a>
+Download RNAPII Hilbert curves: <a href="./suppl_files/Fig1C_pol2_st7_xt91_hilbert.png">128-cell</a> | <a href="./suppl_files/Fig1C_pol2_st8p_xt91_hilbert.png">MBT</a> | <a href="./suppl_files/Fig1C_chrom_xt91_hilbert.png">gene examples</a>.
 
 #### 2.9  Gene annotations
 
@@ -1395,7 +1392,7 @@ Download Alluvial plot (Figure 1D) and metrics: <a href="./suppl_files/Fig1D_all
 
 #### 2.12 Gene architecture
 
-Gene architecture during ZGA including Wilcoxon rank-sum test (alternative hypothesis y\<x) and effect size calculations (Figure 1F and S1K)
+Gene architecture during ZGA including Wilcoxon rank-sum test (alternative hypothesis y<x) and effect size calculations (Figure 1F and S1K)
 
 ```{r GENE ARCHITECTURE, eval=FALSE}
 stages.l          <- c("32-cell","128-cell","1000-cell","MBT","mid-gastrula","late gastrula")
@@ -1437,8 +1434,8 @@ s.devSt           <- df.zga$stage > 0
 ```
 
 ```{r GENE LENGTH, eval=FALSE}
-
 # GENE LENGTH
+
 boxplt <- list( whisklty="solid", staplelty="solid", medcol="black", medlwd=3, boxwex=.8 )
 
 pdf("Fig1F_mat_zyg_geneLen_pol2_st6to12p.pdf", height=2.5, width=7, useDingbats=FALSE, family="Arial" )
@@ -1536,11 +1533,10 @@ sink()
 Download beeswarm plot showing gene length distribution (Figure 1F), metrics and Wilcoxon rank-sum test results: 
 <a href="./suppl_files/Fig1F_mat_zyg_geneLen_pol2_st6to12p.pdf">PDF</a> | 
 <a href="./suppl_files/Fig1F_mat_zyg_geneLen_pol2_st6to12p.csv">CSV</a> | 
-<a href="./suppl_files/Fig1F_mat_zyg_geneLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
+<a href="./suppl_files/Fig1F_mat_zyg_geneLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>.
 
 
 ```{r mRNA LENGTH, eval=FALSE}
-
 # mRNA LENGTH
 
 pdf("FigS1K_mat_zyg_txLen_pol2_st6to12p.pdf", height=2.5, width=7, useDingbats=FALSE, family="Arial" )
@@ -1638,7 +1634,7 @@ sink()
 Download beeswarm plot showing mRNA length distribution (Figure S1K), metrics and Wilcoxon rank-sum test results: 
 <a href="./suppl_files/Fig1F_mat_zyg_txLen_pol2_st6to12p.pdf">PDF</a> | 
 <a href="./suppl_files/Fig1F_mat_zyg_txLen_pol2_st6to12p.csv">CSV</a> | 
-<a href="./suppl_files/Fig1F_mat_zyg_txLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
+<a href="./suppl_files/Fig1F_mat_zyg_txLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>.
 
 ```{r INTRON COUNT, eval=FALSE}
 # INTRON COUNT
@@ -1737,7 +1733,7 @@ sink()
 Download beeswarm plot showing intron count distribution (Figure S1K), metrics and Wilcoxon rank-sum test results: 
 <a href="./suppl_files/Fig1F_mat_zyg_intronCount_pol2_st6to12p.pdf">PDF</a> | 
 <a href="./suppl_files/Fig1F_mat_zyg_intronCount_pol2_st6to12p.csv">CSV</a> | 
-<a href="./suppl_files/Fig1F_mat_zyg_intronCount_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
+<a href="./suppl_files/Fig1F_mat_zyg_intronCount_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>.
 
 ```{r CDS LENGTH, eval=FALSE}
 # CDS LENGTH
@@ -1836,7 +1832,7 @@ sink()
 Download beeswarm plot showing CDS length distribution (Figure S1K), metrics and Wilcoxon rank-sum test results: 
 <a href="./suppl_files/Fig1F_mat_zyg_cdsLen_pol2_st6to12p.pdf">PDF</a> | 
 <a href="./suppl_files/Fig1F_mat_zyg_cdsLen_pol2_st6to12p.csv">CSV</a> | 
-<a href="./suppl_files/Fig1F_mat_zyg_cdsLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
+<a href="./suppl_files/Fig1F_mat_zyg_cdsLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>.
 
 ```{r AVERAGE INTRON LENGTH, eval=FALSE}
 # AVERAGE INTRON LENGTH
@@ -1935,7 +1931,7 @@ sink()
 Download beeswarm plot showing average intron length distribution (Figure S1K), metrics and Wilcoxon rank-sum test results: 
 <a href="./suppl_files/Fig1F_mat_zyg_avIntronLen_pol2_st6to12p.pdf">PDF</a> | 
 <a href="./suppl_files/Fig1F_mat_zyg_avIntronLen_pol2_st6to12p.csv">CSV</a> | 
-<a href="./suppl_files/Fig1F_mat_zyg_avIntronLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
+<a href="./suppl_files/Fig1F_mat_zyg_avIntronLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>.
 
 ```{r 3\'UTR LENGTH, eval=FALSE}
 # 3'UTR LENGTH
@@ -2035,7 +2031,7 @@ sink()
 Download beeswarm plot showing 3'UTR length distribution (Figure S1K), metrics and Wilcoxon rank-sum test results: 
 <a href="./suppl_files/Fig1F_mat_zyg_utr3Len_pol2_st6to12p.pdf">PDF</a> | 
 <a href="./suppl_files/Fig1F_mat_zyg_utr3Len_pol2_st6to12p.csv">CSV</a> | 
-<a href="./suppl_files/Fig1F_mat_zyg_utr3Len_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
+<a href="./suppl_files/Fig1F_mat_zyg_utr3Len_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>.
 
 ```{r 5\'UTR LENGTH, eval=FALSE}
 # 5'UTR LENGTH
@@ -2135,7 +2131,7 @@ sink()
 Download beeswarm plot showing 5'UTR length distribution (Figure S1K), metrics and Wilcoxon rank-sum test results: 
 <a href="./suppl_files/Fig1F_mat_zyg_utr5Len_pol2_st6to12p.pdf">PDF</a> | 
 <a href="./suppl_files/Fig1F_mat_zyg_utr5Len_pol2_st6to12p.csv">CSV</a> | 
-<a href="./suppl_files/Fig1F_mat_zyg_utr5Len_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
+<a href="./suppl_files/Fig1F_mat_zyg_utr5Len_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>.
 
 
 #### 2.13 Maternal and zygotic contributions to transcriptome
@@ -2192,9 +2188,9 @@ pdf("Fig1G_mat_zyg_contribution_pie_chart.pdf", height=1, width=7)
 dev.off()
 ```
 
-Download piecharts and statistics showing nominal maternal/sygotic contribution to transcriptome (Figure 1G): 
+Download piecharts and statistics showing nominal maternal/zygotic contribution to transcriptome (Figure 1G): 
 <a href="./suppl_files/Fig1G_mat_zyg_contribution_pie_chart.pdf">PDF</a> | 
-<a href="./suppl_files/Fig1G_mat_zyg_contribution_statistics.csv">CSV</a>
+<a href="./suppl_files/Fig1G_mat_zyg_contribution_statistics.csv">CSV</a>.
 
 #### 2.14 Functional annotations
 
@@ -2317,12 +2313,7 @@ ggplot( grid, aes( X5, X6, color = factor( X4 ) ) ) +
 dev.off()
 ```
 
-Bubble plot showing enriched gene ontology (GO) terms during ZGA (Figure 1E):
-<p align="left">
-<img src="./suppl_files/Fig1E_GO_ZGA.pdf" width="100%">
-</p>
-Download bubble plot showing enriched gene ontology (GO) terms during ZGA (Figure 1E) and results (CSV) of hypergeometric tests yielding overrepresented GO terms at indicated developmental stages: 
-<a href="./suppl_files/Fig1E_GO_ZGA.pdf">PDF</a> | 
+Download <a href="./suppl_files/Fig1E_GO_ZGA.pdf">bubble plot (PDF)</a> showing enriched gene ontology (GO) terms during ZGA (Figure 1E) and results (CSV) of hypergeometric tests yielding overrepresented GO terms at indicated developmental stages: 
 <a href="./suppl_files/hyperGTest_over_activated_st6.csv">32-cell</a> | 
 <a href="./suppl_files/hyperGTest_over_activated_st6a7.csv">32/128-cell</a> | 
 <a href="./suppl_files/hyperGTest_over_activated_st7.csv">128-cell</a> | 
@@ -2333,7 +2324,9 @@ Download bubble plot showing enriched gene ontology (GO) terms during ZGA (Figur
 <a href="./suppl_files/hyperGTest_over_activated_st8pa11.csv">MBT/mid-gastrula</a> | 
 <a href="./suppl_files/hyperGTest_over_activated_st11.csv">mid-gastrula</a> | 
 <a href="./suppl_files/hyperGTest_over_activated_st11a12p.csv">mid/late gastrula</a> | 
-<a href="./suppl_files/hyperGTest_over_activated_st12p.csv">late gastrula</a>
+<a href="./suppl_files/hyperGTest_over_activated_st12p.csv">late gastrula</a>.
+
+
 
 ### 3. Signal-Mediated Zygotic Genome Activation
 
@@ -3358,15 +3351,12 @@ image( t( 100*2^ms ), breaks = brk.rna, col = col.rna, axes=FALSE )
 dev.off()
 ```
 
-Heatmap of hierarchically clustered gene expression levels in loss-of-function (LOF) embryos (Figure 2C) (from left to right):
-(1) alfa-amanitin, (2) standard control MO, (3) BMP LOF, (4) Nodal LOF, (5) Nodal/BMP LOF, (6) Wnt LOF, (7) Wnt/BMP LOF, (8) Wnt/Nodal LOF, (9) Wnt/Nodal/BMP LOF, (10) maternal Pou5f3/Sox3 LOF, (11) maternal VegT LOF, and (12) quadruple LOF of zygotic T-box transcription factors.
+Heatmap of hierarchically clustered gene expression levels in loss-of-function (LOF) embryos (Figure 2C) (from left to right column):
+(#1) alfa-amanitin, (#2) standard control MO, (#3) BMP LOF, (#4) Nodal LOF, (#5) Nodal/BMP LOF, (#6) Wnt LOF, (#7) Wnt/BMP LOF, (#8) Wnt/Nodal LOF, (#9) Wnt/Nodal/BMP LOF, (#10) maternal Pou5f3/Sox3 LOF, (#11) maternal VegT LOF, and (#12) quadruple LOF of zygotic T-box transcription factors.
 
 <p align="left"><img src="./suppl_files/Fig2C_LOF_RNA_OLOward.png" width="70%" height="300"></p>
 
-Download heatmap and differential ZGA results:\ <a href="./suppl_files/Fig2C_LOF_RNA_OLOward.png">PNG</a>\ |\ <a href="./suppl_files/zga_lof_results.csv">CSV</a>
-
-Color bar of differential expression (percentage of control): <a href="./suppl_files/DiffExpr_colorbar.pdf">PDF</a>
-<p align="left"><img src="./suppl_files/DiffExpr_colorbar.pdf"></p>
+Download <a href="./suppl_files/Fig2C_LOF_RNA_OLOward.png">heatmap (PNG)</a>, <a href="./suppl_files/zga_lof_results.csv">differential ZGA results (CSV)</a> and <a href="./suppl_files/DiffExpr_colorbar.pdf">color bar of differential expression (PDF)</a>. 
 
 
 ```{r ZGA LOF BARGRAPH, eval=FALSE}
@@ -3412,13 +3402,8 @@ pdf( "Fig2C_zga_lof_ama50_mz.pdf", width=8, height=4 )
 dev.off()
 ```
 
-Bargraph of LOF effects on ZGA separated by zygotic only and maternal/zygotic genes (Figure 2C):
+Download bargraph of LOF effects on ZGA separated by zygotic only and maternal/zygotic genes (Figure 2C): <a href="./suppl_files/Fig2C_zga_lof_ama50_mz.pdf">PDF</a>.
 
-<p align="left">
-<img src="./suppl_files/Fig2C_zga_lof_ama50_mz.pdf" width="100%">
-</p>
-
-Download bargraph:\ <a href="./suppl_files/Fig2C_zga_lof_ama50_mz.pdf">PDF</a>
 
 #### 3.3 Functional analysis of misregulated genes
 
@@ -3581,11 +3566,8 @@ theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.
 dev.off()
 ```
 
-Bubble plot showing selected enriched gene ontology (GO) terms among down- and up-regulated genes (Figure 2D):
-<p align="left">
-<img src="./suppl_files/Fig2D_GO_term_LOF_ZGA.pdf" width="100%">
-</p>
-Download bubble plot:\ <a href="./suppl_files/Fig2D_GO_term_LOF_ZGA.pdf">PDF</a>
+Download bubble plot showing selected enriched gene ontology (GO) terms among down- and up-regulated genes (Figure 2D): <a href="./suppl_files/Fig2D_GO_term_LOF_ZGA.pdf">PDF</a>.
+
 
 #### 3.4  Transcriptional effects in space and time
 
@@ -3649,7 +3631,6 @@ for ( rex in rel.exprs ) {
         detach(zga.lof.table_)
     }
 }
-
 
 
 # FUNCTION: Percentages of mis-regulated ZGA resolved in time and space (Figure 2E and S2C-F)
@@ -3756,185 +3737,98 @@ SpatioTempPercTable( gene.expr=perc.tpm$maxWNBLOF.st8to10.uni.mean, pdf.name="ma
 **The spatio-temporal control of ZGA**
 
 * Colour: relative gene expression levels (percentage) in LOF embryos (<a href="./suppl_files/DiffExpr_colorbar_alt.pdf">PDF</a>)
-<p align="left"><img src="./suppl_files/DiffExpr_colorbar_alt.pdf"></p>
 * x-axis: dorso-ventral gene expression ratio  
 * y-axis: animal-vegetal gene expression ratio  
 
 
 **Effect of Wnt LOF on ZGA** (Figure 2E)
 
-Download plots and percentage table of down-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes):\ 
-<a href="./suppl_files/WntLOF.pdf">summary</a>\ |\ 
-<a href="./suppl_files/WntLOF_st6.pdf">32-cell</a>\ |\ 
-<a href="./suppl_files/WntLOF_st7.pdf">128-cell</a>\ |\ 
-<a href="./suppl_files/WntLOF_st8.pdf">1,024-cell</a>\ |\ 
-<a href="./suppl_files/WntLOF_st8.5.pdf">MBT</a>\ |\ 
-<a href="./suppl_files/WntLOF_down_spatioAnVg_devSt_percTable.pdf">animal-vegetal</a>\ |\ 
-<a href="./suppl_files/WntLOF_down_spatioDV_devSt_percTable.pdf">dorso-ventral</a>  
-
-<p align="left">
-<img src="./suppl_files/WntLOF.pdf", width="45%">
-<img src="./suppl_files/WntLOF_st6.pdf", width="45%">
-<img src="./suppl_files/WntLOF_st7.pdf", width="45%">
-<img src="./suppl_files/WntLOF_st8.pdf", width="45%">
-<img src="./suppl_files/WntLOF_st8.5.pdf", width="45%">
-</p>
-<p align="left">
-<img src="./suppl_files/WntLOF_down_spatioAnVg_devSt_percTable.pdf">
-<img src="./suppl_files/WntLOF_down_spatioDV_devSt_percTable.pdf">
-</p>
+Download plots and percentage table of down-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes): 
+<a href="./suppl_files/WntLOF.pdf">summary</a> |  
+<a href="./suppl_files/WntLOF_st6.pdf">32-cell</a> |  
+<a href="./suppl_files/WntLOF_st7.pdf">128-cell</a> |  
+<a href="./suppl_files/WntLOF_st8.pdf">1,024-cell</a> |  
+<a href="./suppl_files/WntLOF_st8.5.pdf">MBT</a> |  
+<a href="./suppl_files/WntLOF_down_spatioAnVg_devSt_percTable.pdf">animal-vegetal</a> | 
+<a href="./suppl_files/WntLOF_down_spatioDV_devSt_percTable.pdf">dorso-ventral</a>.  
 
 ***
 
 **Effect of Nodal LOF on ZGA** (Figure S2C)  
 
-Download plots and percentage table of down-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes):\ 
-<a href="./suppl_files/NodalLOF.pdf">summary</a>\ |\ 
-<a href="./suppl_files/NodalLOF_st6.pdf">32-cell</a>\ |\ 
-<a href="./suppl_files/NodalLOF_st7.pdf">128-cell</a>\ |\ 
-<a href="./suppl_files/NodalLOF_st8.pdf">1,024-cell</a>\ |\ 
-<a href="./suppl_files/NodalLOF_st8.5.pdf">MBT</a>\ |\ <a href="./suppl_files/NodalLOF_down_spatioAnVg_devSt_percTable.pdf">animal-vegetal</a>\ |\ 
-<a href="./suppl_files/NodalLOF_down_spatioDV_devSt_percTable.pdf">dorso-ventral</a> 
-
-<p align="left">
-<img src="./suppl_files/NodalLOF.pdf", width="45%">
-<img src="./suppl_files/NodalLOF_st6.pdf", width="45%">
-<img src="./suppl_files/NodalLOF_st7.pdf", width="45%">
-<img src="./suppl_files/NodalLOF_st8.pdf", width="45%">
-<img src="./suppl_files/NodalLOF_st8.5.pdf", width="45%">
-</p>
-<p align="left">
-<img src="./suppl_files/NodalLOF_down_spatioAnVg_devSt_percTable.pdf">
-<img src="./suppl_files/NodalLOF_down_spatioDV_devSt_percTable.pdf">
-</p>
+Download plots and percentage table of down-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes): 
+<a href="./suppl_files/NodalLOF.pdf">summary</a> | 
+<a href="./suppl_files/NodalLOF_st6.pdf">32-cell</a> | 
+<a href="./suppl_files/NodalLOF_st7.pdf">128-cell</a> | 
+<a href="./suppl_files/NodalLOF_st8.pdf">1,024-cell</a> | 
+<a href="./suppl_files/NodalLOF_st8.5.pdf">MBT</a> | 
+<a href="./suppl_files/NodalLOF_down_spatioAnVg_devSt_percTable.pdf">animal-vegetal</a> | 
+<a href="./suppl_files/NodalLOF_down_spatioDV_devSt_percTable.pdf">dorso-ventral</a>. 
 
 ***
 
 **Effect of Bmp LOF on ZGA** (Figure S2D)
 
-Download plots and percentage table of down-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes):\ 
-<a href="./suppl_files/BmpLOF.pdf">summary</a>\ |\ 
-<a href="./suppl_files/BmpLOF_st6.pdf">32-cell</a>\ |\ 
-<a href="./suppl_files/BmpLOF_st7.pdf">128-cell</a>\ |\ 
-<a href="./suppl_files/BmpLOF_st8.pdf">1,024-cell</a>\ |\ 
-<a href="./suppl_files/BmpLOF_st8.5.pdf">MBT</a>\ |\ 
-<a href="./suppl_files/BmpLOF_down_spatioAnVg_devSt_percTable.pdf">animal-vegetal</a>\ |\ 
-<a href="./suppl_files/BmpLOF_down_spatioDV_devSt_percTable.pdf">dorso-ventral</a>  
-
-<p align="left">
-<img src="./suppl_files/BmpLOF.pdf", width="45%">
-<img src="./suppl_files/BmpLOF_st6.pdf", width="45%">
-<img src="./suppl_files/BmpLOF_st7.pdf", width="45%">
-<img src="./suppl_files/BmpLOF_st8.pdf", width="45%">
-<img src="./suppl_files/BmpLOF_st8.5.pdf", width="45%">
-</p>
-<p align="left">
-<img src="./suppl_files/BmpLOF_down_spatioAnVg_devSt_percTable.pdf">
-<img src="./suppl_files/BmpLOF_down_spatioDV_devSt_percTable.pdf">
-</p>
-
+Download plots and percentage table of down-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes): 
+<a href="./suppl_files/BmpLOF.pdf">summary</a> | 
+<a href="./suppl_files/BmpLOF_st6.pdf">32-cell</a> | 
+<a href="./suppl_files/BmpLOF_st7.pdf">128-cell</a> | 
+<a href="./suppl_files/BmpLOF_st8.pdf">1,024-cell</a> | 
+<a href="./suppl_files/BmpLOF_st8.5.pdf">MBT</a> | 
+<a href="./suppl_files/BmpLOF_down_spatioAnVg_devSt_percTable.pdf">animal-vegetal</a> | 
+<a href="./suppl_files/BmpLOF_down_spatioDV_devSt_percTable.pdf">dorso-ventral</a>.  
 
 ***
 
 **Effect of maternal Pou5f3/Sox3 LOF on ZGA** (Figure S2E)
 
-Download plots and percentage table of down-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes):\ 
-<a href="./suppl_files/mPSLOF.pdf">summary</a>\ |\ 
-<a href="./suppl_files/mPSLOF_st6.pdf">32-cell</a>\ |\ 
-<a href="./suppl_files/mPSLOF_st7.pdf">128-cell</a>\ |\ 
-<a href="./suppl_files/mPSLOF_st8.pdf">1,024-cell</a>\ |\ 
-<a href="./suppl_files/mPSLOF_st8.5.pdf">MBT</a>\ |\ 
-<a href="./suppl_files/mPSLOF_down_spatioAnVg_devSt_percTable.pdf">animal-vegetal</a>\ |\ 
-<a href="./suppl_files/mPSLOF_down_spatioDV_devSt_percTable.pdf">dorso-ventral</a>  
-
-<p align="left">
-<img src="./suppl_files/mPSLOF.pdf", width="45%">
-<img src="./suppl_files/mPSLOF_st6.pdf", width="45%">
-<img src="./suppl_files/mPSLOF_st7.pdf", width="45%">
-<img src="./suppl_files/mPSLOF_st8.pdf", width="45%">
-<img src="./suppl_files/mPSLOF_st8.5.pdf", width="45%">
-</p>
-<p align="left">
-<img src="./suppl_files/mPSLOF_down_spatioAnVg_devSt_percTable.pdf">
-<img src="./suppl_files/mPSLOF_down_spatioDV_devSt_percTable.pdf">
-</p>
-
+Download plots and percentage table of down-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes): 
+<a href="./suppl_files/mPSLOF.pdf">summary</a> | 
+<a href="./suppl_files/mPSLOF_st6.pdf">32-cell</a> | 
+<a href="./suppl_files/mPSLOF_st7.pdf">128-cell</a> | 
+<a href="./suppl_files/mPSLOF_st8.pdf">1,024-cell</a> | 
+<a href="./suppl_files/mPSLOF_st8.5.pdf">MBT</a> | 
+<a href="./suppl_files/mPSLOF_down_spatioAnVg_devSt_percTable.pdf">animal-vegetal</a> | 
+<a href="./suppl_files/mPSLOF_down_spatioDV_devSt_percTable.pdf">dorso-ventral</a>.  
 
 ***
 
 **Effect of maternal VegT LOF on ZGA** (Figure S2F)
 
-Download plots and percentage table of down-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes):\ 
-<a href="./suppl_files/mVegTLOF.pdf">summary</a>\ |\ 
-<a href="./suppl_files/mVegTLOF_st6.pdf">32-cell</a>\ |\ 
-<a href="./suppl_files/mVegTLOF_st7.pdf">128-cell</a>\ |\ 
-<a href="./suppl_files/mVegTLOF_st8.pdf">1,024-cell</a>\ |\ 
-<a href="./suppl_files/mVegTLOF_st8.5.pdf">MBT</a>\ |\ 
-<a href="./suppl_files/mVegTLOF_down_spatioAnVg_devSt_percTable.pdf">animal-vegetal</a>\ |\ 
-<a href="./suppl_files/mVegTLOF_down_spatioDV_devSt_percTable.pdf">dorso-ventral</a>
-
-<p align="left">
-<img src="./suppl_files/mVegTLOF.pdf", width="45%">
-<img src="./suppl_files/mVegTLOF_st6.pdf", width="45%">
-<img src="./suppl_files/mVegTLOF_st7.pdf", width="45%">
-<img src="./suppl_files/mVegTLOF_st8.pdf", width="45%">
-<img src="./suppl_files/mVegTLOF_st8.5.pdf", width="45%">
-</p>
-<p align="left">
-<img src="./suppl_files/mVegTLOF_down_spatioAnVg_devSt_percTable.pdf">
-<img src="./suppl_files/mVegTLOF_down_spatioDV_devSt_percTable.pdf">
-</p>
+Download plots and percentage table of down-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes): 
+<a href="./suppl_files/mVegTLOF.pdf">summary</a> | 
+<a href="./suppl_files/mVegTLOF_st6.pdf">32-cell</a> | 
+<a href="./suppl_files/mVegTLOF_st7.pdf">128-cell</a> | 
+<a href="./suppl_files/mVegTLOF_st8.pdf">1,024-cell</a> | 
+<a href="./suppl_files/mVegTLOF_st8.5.pdf">MBT</a> | 
+<a href="./suppl_files/mVegTLOF_down_spatioAnVg_devSt_percTable.pdf">animal-vegetal</a> | 
+<a href="./suppl_files/mVegTLOF_down_spatioDV_devSt_percTable.pdf">dorso-ventral</a>.
 
 ***
 
 **Strongest negative effect of Wnt, Nodal and BMP signals on ZGA** (Figure 4C)
 
-Download plots and percentage table of down-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes):\ 
-<a href="./suppl_files/minWNBLOF.pdf">summary</a>\ |\ 
-<a href="./suppl_files/minWNBLOF_st6.pdf">32-cell</a>\ |\ 
-<a href="./suppl_files/minWNBLOF_st7.pdf">128-cell</a>\ |\ 
-<a href="./suppl_files/minWNBLOF_st8.pdf">1,024-cell</a>\ |\ 
-<a href="./suppl_files/minWNBLOF_st8.5.pdf">MBT</a>\ |\ 
-<a href="./suppl_files/minWNBLOF_down_spatioAnVg_devSt_percTable.pdf">animal-vegetal</a>\ |\ 
-<a href="./suppl_files/minWNBLOF_down_spatioDV_devSt_percTable.pdf">dorso-ventral</a>  
-
-<p align="left">
-<img src="./suppl_files/minWNBLOF.pdf", width="45%">
-<img src="./suppl_files/minWNBLOF_st6.pdf", width="45%">
-<img src="./suppl_files/minWNBLOF_st7.pdf", width="45%">
-<img src="./suppl_files/minWNBLOF_st8.pdf", width="45%">
-<img src="./suppl_files/minWNBLOF_st8.5.pdf", width="45%">
-</p>
-<p align="left">
-<img src="./suppl_files/minWNBLOF_down_spatioAnVg_devSt_percTable.pdf">
-<img src="./suppl_files/minWNBLOF_down_spatioDV_devSt_percTable.pdf">
-</p>
-
+Download plots and percentage table of down-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes): 
+<a href="./suppl_files/minWNBLOF.pdf">summary</a> | 
+<a href="./suppl_files/minWNBLOF_st6.pdf">32-cell</a> | 
+<a href="./suppl_files/minWNBLOF_st7.pdf">128-cell</a> | 
+<a href="./suppl_files/minWNBLOF_st8.pdf">1,024-cell</a> | 
+<a href="./suppl_files/minWNBLOF_st8.5.pdf">MBT</a> | 
+<a href="./suppl_files/minWNBLOF_down_spatioAnVg_devSt_percTable.pdf">animal-vegetal</a> | 
+<a href="./suppl_files/minWNBLOF_down_spatioDV_devSt_percTable.pdf">dorso-ventral</a>.  
 
 ***
 
 **Strongest positive effect of Wnt, Nodal and BMP signals on ZGA** (Figure 4D)
 
 Download plots and percentage table of up-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes):\ 
-<a href="./suppl_files/maxWNBLOF.pdf">summary</a>\ |\ 
-<a href="./suppl_files/maxWNBLOF_st6.pdf">32-cell</a>\ |\ 
-<a href="./suppl_files/maxWNBLOF_st7.pdf">128-cell</a>\ |\ 
-<a href="./suppl_files/maxWNBLOF_st8.pdf">1,024-cell</a>\ |\ 
-<a href="./suppl_files/maxWNBLOF_st8.5.pdf">MBT</a>\ |\ 
-<a href="./suppl_files/maxWNBLOF_up_spatioAnVg_devSt_percTable.pdf">animal-vegetal</a>\ |\ 
-<a href="./suppl_files/maxWNBLOF_up_spatioDV_devSt_percTable.pdf">dorso-ventral</a>
-
-<p align="left">
-<img src="./suppl_files/maxWNBLOF.pdf", width="45%">
-<img src="./suppl_files/maxWNBLOF_st6.pdf", width="45%">
-<img src="./suppl_files/maxWNBLOF_st7.pdf", width="45%">
-<img src="./suppl_files/maxWNBLOF_st8.pdf", width="45%">
-<img src="./suppl_files/maxWNBLOF_st8.5.pdf", width="45%">
-</p>
-<p align="left">
-<img src="./suppl_files/maxWNBLOF_up_spatioAnVg_devSt_percTable.pdf">
-<img src="./suppl_files/maxWNBLOF_up_spatioDV_devSt_percTable.pdf">
-</p>
+<a href="./suppl_files/maxWNBLOF.pdf">summary</a> | 
+<a href="./suppl_files/maxWNBLOF_st6.pdf">32-cell</a> | 
+<a href="./suppl_files/maxWNBLOF_st7.pdf">128-cell</a> | 
+<a href="./suppl_files/maxWNBLOF_st8.pdf">1,024-cell</a> | 
+<a href="./suppl_files/maxWNBLOF_st8.5.pdf">MBT</a> | 
+<a href="./suppl_files/maxWNBLOF_up_spatioAnVg_devSt_percTable.pdf">animal-vegetal</a> | 
+<a href="./suppl_files/maxWNBLOF_up_spatioDV_devSt_percTable.pdf">dorso-ventral</a>.
 
 
 #### 3.5  Synergistic effects
@@ -4048,33 +3942,17 @@ plotDifSp( fc.x=fc.x1, fc.y=fc.y, select=select, cl=cl.rna.2, x.lim.min=0, x.lim
 
 **Plot #6** and **#7**: Beeswarm, regional expression along the animal-vegetal (**#6**) and dorso-ventral (**#7**) axis grouped by the synergy factor.
 
-Color bars for regulatory relationship plots. Press link for download:
-<p align="left">
-<img src="./suppl_files/SF_colorbar.pdf" width="20%">
-<img src="./suppl_files/AnVg_colorbar.pdf" width="20%">
-<img src="./suppl_files/DV_colorbar.pdf" width="20%">
-</p>
-<a href="./suppl_files/SF_colorbar.pdf">Synergy factor</a>\ \ |\ \ 
-<a href="./suppl_files/AnVg_colorbar.pdf">Animal-vegetal expression ratio</a>\ \ |\ \
-<a href="./suppl_files/DV_colorbar.pdf">Dorso-ventral expression ratio</a>
+Color bars for regulatory relationship plots. Press link for download: <a href="./suppl_files/SF_colorbar.pdf">Synergy factor</a> | 
+<a href="./suppl_files/AnVg_colorbar.pdf">Animal-vegetal expression ratio</a> | 
+<a href="./suppl_files/DV_colorbar.pdf">Dorso-ventral expression ratio</a>.
 
-<p align="left">
-<img src="./suppl_files/WntLOF_vs_WBLOF_BmpDifZoomForSF.pdf", width="45%">
-<img src="./suppl_files/WntLOF_vs_WBLOF_NodalDifZoomForSF.pdf", width="45%">
-<img src="./suppl_files/WntLOF_vs_WBLOF_SF.pdf", width="45%">
-<img src="./suppl_files/WntLOF_vs_WBLOF_spatioAnVgZoomForSF.pdf", width="45%">
-<img src="./suppl_files/WntLOF_vs_WBLOF_spatioDVZoomForSF.pdf", width="45%">
-<img src="./suppl_files/WBLOF_SF_spatioAnVg_beeswarm.pdf", width="45%">
-<img src="./suppl_files/WBLOF_SF_spatioDV_beeswarm.pdf", width="45%">
-</p>
-
-Download plots:\ <a href="./suppl_files/WntLOF_vs_WBLOF_BmpDifZoomForSF.pdf">#1</a>\ |\ 
-<a href="./suppl_files/WntLOF_vs_WBLOF_NodalDifZoomForSF.pdf">#2</a>\ |\ 
-<a href="./suppl_files/WntLOF_vs_WBLOF_SF.pdf">#3</a>\ |\ 
-<a href="./suppl_files/WntLOF_vs_WBLOF_spatioAnVgZoomForSF.pdf">#4</a>\ |\ 
-<a href="./suppl_files/WntLOF_vs_WBLOF_spatioDVZoomForSF.pdf">#5</a>\ |\ 
-<a href="./suppl_files/WBLOF_SF_spatioAnVg_beeswarm.pdf">#6</a>\ |\ 
-<a href="./suppl_files/WBLOF_SF_spatioDV_beeswarm.pdf">#7</a>
+Download plots: <a href="./suppl_files/WntLOF_vs_WBLOF_BmpDifZoomForSF.pdf">#1</a> | 
+<a href="./suppl_files/WntLOF_vs_WBLOF_NodalDifZoomForSF.pdf">#2</a> | 
+<a href="./suppl_files/WntLOF_vs_WBLOF_SF.pdf">#3</a> | 
+<a href="./suppl_files/WntLOF_vs_WBLOF_spatioAnVgZoomForSF.pdf">#4</a> | 
+<a href="./suppl_files/WntLOF_vs_WBLOF_spatioDVZoomForSF.pdf">#5</a> | 
+<a href="./suppl_files/WBLOF_SF_spatioAnVg_beeswarm.pdf">#6</a> | 
+<a href="./suppl_files/WBLOF_SF_spatioDV_beeswarm.pdf">#7</a>.
 
 
 ```{r SYNERGY Nodal AND BMP, eval=FALSE}
@@ -4122,24 +4000,14 @@ plotDifSp( fc.x=fc.x1, fc.y=fc.y, select=select, cl=cl.rna.2, x.lim.min=0, x.lim
 
 **Plot #6** and **#7**: Beeswarm, regional expression along the animal-vegetal (**#6**) and dorso-ventral (**#7**) axis grouped by the synergy factor.
 
-<p align="left">
-<img src="./suppl_files/NodalLOF_vs_NBLOF_BmpDifZoomForSF.pdf", width="45%">
-<img src="./suppl_files/NodalLOF_vs_NBLOF_WBDifZoomForSF.pdf", width="45%">
-<img src="./suppl_files/NodalLOF_vs_NBLOF_SF.pdf", width="45%">
-<img src="./suppl_files/NodalLOF_vs_NBLOF_spatioAnVgZoomForSF.pdf", width="45%">
-<img src="./suppl_files/NodalLOF_vs_NBLOF_spatioDVZoomForSF.pdf", width="45%">
-<img src="./suppl_files/NBLOF_SF_spatioAnVg_beeswarm.pdf", width="45%">
-<img src="./suppl_files/NBLOF_SF_spatioDV_beeswarm.pdf", width="45%">
-</p>
-
-Download plots:\ 
-<a href="./suppl_files/NodalLOF_vs_NBLOF_BmpDifZoomForSF.pdf">#1</a>\ |\ 
-<a href="./suppl_files/NodalLOF_vs_NBLOF_WBDifZoomForSF">#2</a>\ |\ 
-<a href="./suppl_files/NodalLOF_vs_NBLOF_SF.pdf">#3</a>\ |\ 
-<a href="./suppl_files/NodalLOF_vs_NBLOF_spatioAnVgZoomForSF.pdf">#4</a>\ |\ 
-<a href="./suppl_files/NodalLOF_vs_NBLOF_spatioDVZoomForSF.pdf">#5</a>\ |\ 
-<a href="./suppl_files/NBLOF_SF_spatioAnVg_beeswarm.pdf">#6</a>\ |\ 
-<a href="./suppl_files/NBLOF_SF_spatioDV_beeswarm.pdf">#7</a>
+Download plots: 
+<a href="./suppl_files/NodalLOF_vs_NBLOF_BmpDifZoomForSF.pdf">#1</a> | 
+<a href="./suppl_files/NodalLOF_vs_NBLOF_WBDifZoomForSF">#2</a> | 
+<a href="./suppl_files/NodalLOF_vs_NBLOF_SF.pdf">#3</a> | 
+<a href="./suppl_files/NodalLOF_vs_NBLOF_spatioAnVgZoomForSF.pdf">#4</a> | 
+<a href="./suppl_files/NodalLOF_vs_NBLOF_spatioDVZoomForSF.pdf">#5</a> | 
+<a href="./suppl_files/NBLOF_SF_spatioAnVg_beeswarm.pdf">#6</a> | 
+<a href="./suppl_files/NBLOF_SF_spatioDV_beeswarm.pdf">#7</a>.
 
 ```{r SYNERGY WNT AND NODAL, eval=FALSE}
 # Wnt LOF versus Wnt/Nodal LOF
@@ -4186,22 +4054,13 @@ plotDifSp( fc.x=fc.x1, fc.y=fc.y, select=select, cl=cl.rna.2, x.lim.min=0, x.lim
 
 **Plot #5** and **#6**: Beeswarm, regional expression along the animal-vegetal (**#5**) and dorso-ventral (**#6**) axis grouped by the synergy factor.
 
-<p align="left">
-<img src="./suppl_files/WntLOF_vs_WNLOF_NodalDifZoomForSF.pdf", width="45%">
-<img src="./suppl_files/WntLOF_vs_WNLOF_SF.pdf", width="45%">
-<img src="./suppl_files/WntLOF_vs_WNLOF_spatioAnVgZoomForSF.pdf", width="45%">
-<img src="./suppl_files/WntLOF_vs_WNLOF_spatioDVZoomForSF.pdf", width="45%">
-<img src="./suppl_files/WNLOF_SF_spatioAnVg_beeswarm.pdf", width="45%">
-<img src="./suppl_files/WNLOF_SF_spatioDV_beeswarm.pdf", width="45%">
-</p>
-
-Download plots:\ 
-<a href="./suppl_files/WntLOF_vs_WNLOF_NodalDifZoomForSF.pdf">#1</a>\ |\ 
-<a href="./suppl_files/WntLOF_vs_WNLOF_SF.pdf">#2</a>\ |\ 
-<a href="./suppl_files/WntLOF_vs_WNLOF_spatioAnVgZoomForSF.pdf">#3</a>\ |\ 
-<a href="./suppl_files/WntLOF_vs_WNLOF_spatioDVZoomForSF.pdf">#4</a>\ |\ 
-<a href="./suppl_files/WNLOF_SF_spatioAnVg_beeswarm.pdf">#5</a>\ |\ 
-<a href="./suppl_files/WNLOF_SF_spatioDV_beeswarm.pdf">#6</a>
+Download plots: 
+<a href="./suppl_files/WntLOF_vs_WNLOF_NodalDifZoomForSF.pdf">#1</a> | 
+<a href="./suppl_files/WntLOF_vs_WNLOF_SF.pdf">#2</a> | 
+<a href="./suppl_files/WntLOF_vs_WNLOF_spatioAnVgZoomForSF.pdf">#3</a> | 
+<a href="./suppl_files/WntLOF_vs_WNLOF_spatioDVZoomForSF.pdf">#4</a> | 
+<a href="./suppl_files/WNLOF_SF_spatioAnVg_beeswarm.pdf">#5</a> | 
+<a href="./suppl_files/WNLOF_SF_spatioDV_beeswarm.pdf">#6</a>.
 
 ```{r ZGA LOF VENN, eval=FALSE}
 zga.genes              <- rownames( zga.lof.table )
@@ -4267,20 +4126,11 @@ vennDiagram( vennCounts( venn.dwn ))
 dev.off()
 ```
 
-Venn diagrams of downregulated genes (Figure 3B,D and S3G,N)
-
-<p align="left">
-<img src="./suppl_files/WntLOF_BmpLOF_WBLOF_venn.pdf", width="40%">
-<img src="./suppl_files/WntLOF_NodalLOF_WBLOF_venn.pdf", width="40%">
-<img src="./suppl_files/WntLOF_NodalLOF_WNLOF_venn.pdf", width="40%">
-<img src="./suppl_files/NodalLOF_BmpLOF_NBLOF_venn.pdf", width="40%">
-</p>
-
-Download Venn diagrams:\ 
-<a href="./suppl_files/WntLOF_BmpLOF_WBLOF_venn.pdf">Wnt LOF, BMP LOF and Wnt/BMP LOF</a>\ |\ 
-<a href="./suppl_files/WntLOF_NodalLOF_WBLOF_venn.pdf">Wnt LOF, Nodal LOF and Wnt/BMP LOF</a>\ |\ 
-<a href="./suppl_files/WntLOF_NodalLOF_WNLOF_venn.pdf">Wnt LOF, Nodal LOF and Wnt/Nodal LOF</a>\ |\ 
-<a href="./suppl_files/WntLOF_NodalLOF_WNLOF_venn.pdf">Nodal LOF, BMP LOF and Nodal/BMP LOF</a>
+Download Venn diagrams of downregulated genes (Figure 3B,D and S3G,N): 
+<a href="./suppl_files/WntLOF_BmpLOF_WBLOF_venn.pdf">Wnt LOF, BMP LOF and Wnt/BMP LOF</a> | 
+<a href="./suppl_files/WntLOF_NodalLOF_WBLOF_venn.pdf">Wnt LOF, Nodal LOF and Wnt/BMP LOF</a> | 
+<a href="./suppl_files/WntLOF_NodalLOF_WNLOF_venn.pdf">Wnt LOF, Nodal LOF and Wnt/Nodal LOF</a> | 
+<a href="./suppl_files/WntLOF_NodalLOF_WNLOF_venn.pdf">Nodal LOF, BMP LOF and Nodal/BMP LOF</a>.
 
 #### 3.6  Summary
 
@@ -4303,8 +4153,9 @@ pdf("Fig4A_zga_mz_gene_misreg_allMatSignals_summary.pdf",width=4,height=4)
 dev.off()
 ```
 
-Pie chart of signal-mediated ZGA (Figure 4A):\ <a href="./suppl_files/Fig4A_zga_mz_gene_misreg_allMatSignals_summary.pdf">PDF</a>
-<p align="left"><img src="./suppl_files/Fig4A_zga_mz_gene_misreg_allMatSignals_summary.pdf", width="40%"></p>
+Download pie chart of signal-mediated ZGA (Figure 4A): 
+<a href="./suppl_files/Fig4A_zga_mz_gene_misreg_allMatSignals_summary.pdf">PDF</a>.
+
 ```{r ZGA QUADRANTS, eval=FALSE}
 attach(zga.lof.table)
 av.AV               <- sum( av.pattern.G >= log2(3) & dv.pattern.G <= log2(1/3) )
@@ -4327,4 +4178,4 @@ cat( "# Animal-Ventral quadrant:", round( 100 / av.AV * av.AV.min, 1 ), "%" )
 sink()
 ```
 
-Coverage of regional ZGA in 'quadrants' (Figure 4E):\ <a href="./suppl_files/Fig4E_Regional_ZGA_quadrants_minWNBLOF.txt">TXT</a>
+Download 'quadrant' coverage of regional ZGA (Figure 4E): <a href="./suppl_files/Fig4E_Regional_ZGA_quadrants_minWNBLOF.txt">TXT</a>.
