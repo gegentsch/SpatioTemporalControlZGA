@@ -44,8 +44,6 @@ This repository contains the R code used to analyze deep sequencing data shown i
 
 ## Data Availability
 
-# 
-
 The raw data is or will be available from the GEO archive under the following accession numbers:
 
   * [GSE113186](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE113186): RNAP polymerase II (RNAPII) chromatin profiling (ChIP-Seq)
@@ -65,8 +63,6 @@ The R script uses intermediate data deposited to the following folders of this r
 
 ## Figure Shortcuts
 
-# 
-
 |             Figure 1              |             Figure 2          |               Figure 3                |                Figure 4            |
 | :-------------------------------: | :---------------------------: | :-----------------------------------: | :--------------------------------: |
 |   ![](./suppl_files/Fig1.png)     |  ![](./suppl_files/Fig2.png)  |     ![](./suppl_files/Fig3.png)       |     ![](./suppl_files/Fig4.png)    |        
@@ -78,7 +74,6 @@ The R script uses intermediate data deposited to the following folders of this r
 | [A,B,L](#27--chromatin-and-rna-dynamics) [D](#26--correlations) [F](#211-spatio-temporal-dynamics) [K](#212-gene-architecture) | [C-F](#34--transcriptional-effects-in-space-and-time) | [A-N](#35--synergistic-effects)
 
 ## Analysis
-
 
 To reproduce the analysis, the folders "chromatin", "RNA", "xenTro71" and "xenTro91" must to be downloaded from this repository to same directory as the R script.
 
@@ -2135,8 +2130,6 @@ Download beeswarm plot showing 5'UTR length distribution (Figure S1K), metrics a
 
 
 #### 2.13 Maternal and zygotic contributions to transcriptome
-
-Nominal MATERNAL/ZYGOTIC contribution (Figure 1G)
 
 ```{r MATERNAL & ZYOGOTIC, eval=FALSE}
 mat.zyg <- function(total,zyg) {
