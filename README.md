@@ -918,11 +918,11 @@ This ZGA heatmap image contains the following chromatin or RNA profiles from lef
 
 Feature       | Scale
 ------------- | -----------------------------------------------------------------------------------------------------------
-RNAPII        | Enrichment against input across gene bodies (32-cell --- late gastrula stage, six developmental stages)
-H3K4me3       | Enrichment against input across gene bodies (1,024-cell --- late gastrula stage, four developmental stages)
-H3K4me3       | Detection summary within gene bodies (1,024-cell --- late gastrula stage, four developmental stages)
-H3K36me3      | Enrichment against input across gene bodies (MBT --- late gastrula stage, three developmental stages)
-H3K36me3      | Detection summary within gene bodies (MBT --- late gastrula stage, three developmental stages)
+RNAPII        | Enrichment against input across gene bodies (from 32-cell to late gastrula stage, six developmental stages)
+H3K4me3       | Enrichment against input across gene bodies (from 1,024-cell to late gastrula stage, four developmental stages)
+H3K4me3       | Detection summary within gene bodies (from 1,024-cell to late gastrula stage, four developmental stages)
+H3K36me3      | Enrichment against input across gene bodies (from MBT to late gastrula stage, three developmental stages)
+H3K36me3      | Detection summary within gene bodies (from MBT to late gastrula stage, three developmental stages)
 total RNA     | Normalized exonic levels of total RNA from fertilization to the early neurula stage
 total RNA     | Normalized intronic levels of total RNA from fertilization to the early neurula stage
 poly(A) RNA   | Normalized intronic levels of poly(A) RNA levels from fertilization to the early neurula stage
@@ -971,7 +971,7 @@ abline(v=4.5,col="black",lty=1)
 dev.off()
 ```
 
-Transcript feature levels (mean +/- SD) during ZGA (Figure S1B): red, exonic (total RNA), blue, intronic (total RNA), and yellow, intronic (poly(A) RNA). Download transcript meta-profile (log~10~ scale): 
+Transcript feature levels (mean +/- SD) during ZGA (Figure S1B): red, exonic (total RNA), blue, intronic (total RNA), and yellow, intronic (poly(A) RNA). Download transcript meta-profile (log10 scale): 
 <a href="./suppl_files/FigS1B_meta_zyg_matRNA_smooth_log.pdf">RNAPII+ genes</a> | 
 <a href="./suppl_files/FigS1B_meta_matRNA_smooth_log.pdf">RNAPII- genes</a>.
 
