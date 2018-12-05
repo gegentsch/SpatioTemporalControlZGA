@@ -3738,7 +3738,7 @@ SpatioTempPercTable( gene.expr=perc.tpm$maxWNBLOF.st8to10.uni.mean, pdf.name="ma
 
 **Effect of Wnt LOF on ZGA** (Figure 2E)
 
-Download plots and percentage table of down-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes): 
+Download plots of mis-regulated genes (and percentage table of down-regulated genes) separated by time and space (along the animal-vegetal and dorso-ventral axes): 
 <a href="./suppl_files/WntLOF.pdf">summary</a> | 
 <a href="./suppl_files/WntLOF_st6.pdf">32-cell</a> | 
 <a href="./suppl_files/WntLOF_st7.pdf">128-cell</a> | 
@@ -3751,7 +3751,7 @@ Download plots and percentage table of down-regulaged genes separated by time an
 
 **Effect of Nodal LOF on ZGA** (Figure S2C)  
 
-Download plots and percentage table of down-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes): 
+Download plots of mis-regulated genes (and percentage table of down-regulated genes) separated by time and space (along the animal-vegetal and dorso-ventral axes): 
 <a href="./suppl_files/NodalLOF.pdf">summary</a> | 
 <a href="./suppl_files/NodalLOF_st6.pdf">32-cell</a> | 
 <a href="./suppl_files/NodalLOF_st7.pdf">128-cell</a> | 
@@ -3764,7 +3764,7 @@ Download plots and percentage table of down-regulaged genes separated by time an
 
 **Effect of Bmp LOF on ZGA** (Figure S2D)
 
-Download plots and percentage table of down-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes): 
+Download plots of mis-regulated genes (and percentage table of down-regulated genes) separated by time and space (along the animal-vegetal and dorso-ventral axes): 
 <a href="./suppl_files/BmpLOF.pdf">summary</a> | 
 <a href="./suppl_files/BmpLOF_st6.pdf">32-cell</a> | 
 <a href="./suppl_files/BmpLOF_st7.pdf">128-cell</a> | 
@@ -3777,7 +3777,7 @@ Download plots and percentage table of down-regulaged genes separated by time an
 
 **Effect of maternal Pou5f3/Sox3 LOF on ZGA** (Figure S2E)
 
-Download plots and percentage table of down-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes): 
+Download plots of mis-regulated genes (and percentage table of down-regulated genes) separated by time and space (along the animal-vegetal and dorso-ventral axes): 
 <a href="./suppl_files/mPSLOF.pdf">summary</a> | 
 <a href="./suppl_files/mPSLOF_st6.pdf">32-cell</a> | 
 <a href="./suppl_files/mPSLOF_st7.pdf">128-cell</a> | 
@@ -3790,7 +3790,7 @@ Download plots and percentage table of down-regulaged genes separated by time an
 
 **Effect of maternal VegT LOF on ZGA** (Figure S2F)
 
-Download plots and percentage table of down-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes): 
+Download plots of mis-regulated genes (and percentage table of down-regulated genes) separated by time and space (along the animal-vegetal and dorso-ventral axes): 
 <a href="./suppl_files/mVegTLOF.pdf">summary</a> | 
 <a href="./suppl_files/mVegTLOF_st6.pdf">32-cell</a> | 
 <a href="./suppl_files/mVegTLOF_st7.pdf">128-cell</a> | 
@@ -3803,7 +3803,7 @@ Download plots and percentage table of down-regulaged genes separated by time an
 
 **Strongest negative effect of Wnt, Nodal and BMP signals on ZGA** (Figure 4C)
 
-Download plots and percentage table of down-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes): 
+Download plots of mis-regulated genes (and percentage table of down-regulated genes) separated by time and space (along the animal-vegetal and dorso-ventral axes): 
 <a href="./suppl_files/minWNBLOF.pdf">summary</a> | 
 <a href="./suppl_files/minWNBLOF_st6.pdf">32-cell</a> | 
 <a href="./suppl_files/minWNBLOF_st7.pdf">128-cell</a> | 
@@ -3816,7 +3816,7 @@ Download plots and percentage table of down-regulaged genes separated by time an
 
 **Strongest positive effect of Wnt, Nodal and BMP signals on ZGA** (Figure 4D)
 
-Download plots and percentage table of up-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes): 
+Download plots of mis-regulated genes (and percentage table of up-regulated genes) separated by time and space (along the animal-vegetal and dorso-ventral axes): 
 <a href="./suppl_files/maxWNBLOF.pdf">summary</a> | 
 <a href="./suppl_files/maxWNBLOF_st6.pdf">32-cell</a> | 
 <a href="./suppl_files/maxWNBLOF_st7.pdf">128-cell</a> | 
@@ -3829,7 +3829,6 @@ Download plots and percentage table of up-regulaged genes separated by time and 
 #### 3.5  Synergistic effects
 
 ```{r SYNERGY, eval=FALSE}
-
 # FUNCTION: Plot two LOFs and color dots according to another feature
 plotDifSp <- function( fc.x, fc.y, select, cl, x.lim.min=0, x.lim.max=1000, y.lim.min=0, y.lim.max=1000, pdf.name, log=FALSE, label=FALSE, height=5.5 ) {
     
