@@ -263,7 +263,7 @@ Here we use the continuous occupancy of RNAPII along gene bodies as a method to 
 
 Calculate the enrichment of RNAP polymerase II (RNAPII) across gene bodies at the following developmental stages using normalised read density maps of RNAPII and high-complexity input: 
 
-* 32-cell stage (stage 6 after Nieuwkoop and Faber, 1994)
+* 32-cell stage (stage 6 after [Nieuwkoop and Faber, 1994](https://www.xenbase.org/anatomy/alldev.do))
 * 128-cell stage (stage 7)
 * 1,024-cell stage (stage 8)
 * Mid-blastula transition (MBT) (stage 8.5)
@@ -459,7 +459,7 @@ rh.rna.gb <- merge( rh.rna, gb, by="row.names", all=FALSE )
 row.names(rh.rna.gb) <- rh.rna.gb$Row.names; rh.rna.gb <- rh.rna.gb[-1]
 ```
 
-We restricted the analysis to genes for which ≥3 transcripts per million (TPM) could be detected on average over three consecutive time points (i.e. over the developmental time of 1 h) of a high-resolution profile of total RNA (Owens et al., 2016) from fertilization to after gastrulation (stage 13).
+We restricted the analysis to genes for which ≥3 transcripts per million (TPM) could be detected on average over three consecutive time points (i.e. over the developmental time of 1 h) of a high-resolution profile of total RNA (Owens *et al.*, 2016) from fertilization to after gastrulation (stage 13).
 
 ```{r TPM, eval=FALSE}
 t1 <- grep( "_0.0hpf.tpm", colnames(rh.rna.gb) )       
@@ -468,7 +468,7 @@ tpm3 <- which( apply( rh.rna.gb[ ,t1:t2], 1, function(x) any(stats::filter(x,rep
 zga <- rh.rna.gb[tpm3,]
 ```
 
-Calculation the level of maternally deposited mRNA transcripts (TPM, transcripts per million). 
+Calculating the level of maternally deposited mRNA transcripts (TPM, transcripts per million). 
 
 ```{r MATERNAL, eval=FALSE}
 # Calculate mean from 3 time points from 0-1 hpf (TPM)
@@ -476,7 +476,7 @@ t2                      <- grep( "_1.0hpf.tpm", colnames(rh.rna.gb) )
 zga$maternal.tpm        <- apply( zga[, t1:t2], 1, function(x) mean(x))
 ```
 
-Calculation of average RNAPII enrichment across gene bodies.
+Calculating the average RNAPII enrichment across gene bodies.
 
 ```{r RNAPII MEAN ENRICHMENT, eval=FALSE}
 # Calculate mean RNAPII enrichment across gene body
