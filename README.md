@@ -57,10 +57,10 @@ The raw data is or will be available from the GEO archive under the following ac
 
 The R script uses intermediate data deposited to the following folders of this repository:
 
-  * [Chromatin profiles](https://github.com/gegentsch/SpatioTemporalControlZGA/master/chromatin)
-  * [RNA profiles](https://github.com/gegentsch/SpatioTemporalControlZGA/master/RNA)
-  * [*X. tropicalis* genome annotation version 7.1](https://github.com/gegentsch/SpatioTemporalControlZGA/master/xenTro71)
-  * [*X. tropicalis* genome annotation version 9.1](https://github.com/gegentsch/SpatioTemporalControlZGA/master/xenTro91)
+  * [Chromatin profiles](https://github.com/gegentsch/SpatioTemporalControlZGA/tree/master/chromatin)
+  * [RNA profiles](https://github.com/gegentsch/SpatioTemporalControlZGA/tree/master/RNA)
+  * [*X. tropicalis* genome annotation version 7.1](https://github.com/gegentsch/SpatioTemporalControlZGA/tree/master/xenTro71)
+  * [*X. tropicalis* genome annotation version 9.1](https://github.com/gegentsch/SpatioTemporalControlZGA/tree/master/xenTro91)
     
 
 ## Figure Shortcuts
