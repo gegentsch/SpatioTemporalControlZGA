@@ -1,0 +1,7 @@
+# Coverage of regional ZGA by Wnt, Nodal and/or BMP signaling 
+# Percentage of regional ZGA within indicated quadrants 
+
+# Animal-Dorsal quadrant: 76.9 % 
+# Vegetal-Dorsal quadrant: 98.2 % 
+# Vegetal-Vental quadrant: 76.5 % 
+# Animal-Ventral quadrant: 53.3 %

@@ -1,0 +1,8 @@
+## mRNA length (bp) ##
+
+,egg,32c,128c,1000c,MBT,mid-gastrula,late gastrula
+lower extreme,99,69,144,99,129,156,117
+25th percentile,1347,484,694,1012,1380,1414,1574
+median,2402,695,1220,1962,2614,2675,2645
+75th percentile,3852,1024,1729,3200,4227,4380,4147
+upper extreme,7604,1631,3265,6344,8431,8800,7988

@@ -1,0 +1,8 @@
+## mean intron length (bp) ##
+
+,egg,32c,128c,1000c,MBT,mid-gastrula,late gastrula
+lower extreme,-12,0,-12,0,0,0,0
+25th percentile,958,0,0,428,783,993,932
+median,1652,64,367,906,1361,1732,1537
+75th percentile,3085,225,780,1617,2373,3310,2806
+upper extreme,6272,372,1916,3385,4738,6706,5616

@@ -1,0 +1,8 @@
+## 5'UTR length (bp) ##
+
+,egg,32c,128c,1000c,MBT,mid-gastrula,late gastrula
+lower extreme,1,5,1,1,1,1,2
+25th percentile,101,20,60,125,122,120,100
+median,195,33,158,247,232,236,192
+75th percentile,363,95,292,475,429,412,353
+upper extreme,756,207,603,980,883,850,731

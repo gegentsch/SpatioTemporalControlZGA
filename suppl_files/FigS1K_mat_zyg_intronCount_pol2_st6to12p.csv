@@ -1,0 +1,8 @@
+## intron count ##
+
+,egg,32c,128c,1000c,MBT,mid-gastrula,late gastrula
+lower extreme,0,0,0,0,0,0,0
+25th percentile,3,0,0,1,3,3,3
+median,7,1,1,3,7,7,7
+75th percentile,13,2,2,6,13,14,13
+upper extreme,28,4,5,14,28,30,28

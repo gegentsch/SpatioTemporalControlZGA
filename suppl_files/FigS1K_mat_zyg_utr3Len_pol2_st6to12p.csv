@@ -1,0 +1,8 @@
+## 3'UTR length (bp) ##
+
+,egg,32c,128c,1000c,MBT,mid-gastrula,late gastrula
+lower extreme,1,57,1,1,2,1,1
+25th percentile,412,79,290,384,464,452,516
+median,957,126,482,896,1068,1050,1047
+75th percentile,1866,340,746,1655,1988,2046,1991
+upper extreme,4047,532,1374,3519,4273,4402,4172

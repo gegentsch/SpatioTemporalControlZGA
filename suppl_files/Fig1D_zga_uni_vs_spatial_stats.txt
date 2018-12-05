@@ -1,0 +1,6 @@
+# Spatially restricted gene expression across the animal-vegetal or dorso-ventral axis
+32c	128c	1,000c	MBT	midG	lateG
+8	47	274	657	868	1090	
+# Uniform gene expression across the animal-vegetal or dorso-ventral axis
+32c	128c	1,000c	MBT	midG	lateG
+19	97	770	2169	2564	3548
