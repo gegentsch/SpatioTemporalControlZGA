@@ -26,11 +26,11 @@ This repository contains the R code used to analyze deep sequencing data shown i
     + [2.7 Chromatin and RNA dynamics](#27--chromatin-and-rna-dynamics)
     + [2.8 Hilbert curves](#28--hilbert-curves)
     + [2.9 Gene annotations](#29--gene-annotations)
-    + [2.10 Regional gene expression](#210--regional-gene-expression)
-    + [2.11 Spatio-temporal dynamics](#211--spatio-temporal-dynamics)
-    + [2.12 Gene architecture](#212--gene-architecture)
-    + [2.13 Maternal and zygotic contributions to transcriptome](#213--maternal-and-zygotic-contributions-to-transcriptome)
-    + [2.14 Functional annotations](#214--functional-annotations)
+    + [2.10 Regional gene expression](#210-regional-gene-expression)
+    + [2.11 Spatio-temporal dynamics](#211-spatio-temporal-dynamics)
+    + [2.12 Gene architecture](#212-gene-architecture)
+    + [2.13 Maternal and zygotic contributions to transcriptome](#213-maternal-and-zygotic-contributions-to-transcriptome)
+    + [2.14 Functional annotations](#214-functional-annotations)
   * [3. Signal-Mediated Zygotic Genome Activation](#3-signal-mediated-zygotic-genome-activation)
     + [3.1 Differential expression analysis](#31--differential-expression-analysis)
     + [3.2 Hierarchical clustering of transcriptional misregulations](#32--hierarchical-clustering-of-transcriptional-misregulations)
@@ -70,13 +70,12 @@ The R script uses intermediate data deposited to the following folders of this r
 |             Figure 1              |             Figure 2          |               Figure 3                |                Figure 4            |
 | :-------------------------------: | :---------------------------: | :-----------------------------------: | :--------------------------------: |
 |   ![](./suppl_files/Fig1.png)     |  ![](./suppl_files/Fig2.png)  |     ![](./suppl_files/Fig3.png)       |     ![](./suppl_files/Fig4.png)    |        
-| [B](#chromatin-and-rna-dynamics) [C](#hilbert-curves) [D](#spatio-temporal-dynamics) [E](#functional-annotations) [F](#gene-architecture) [G](#maternal-and-zygotic-contributions-to-transcriptome) | [C](#hierarchical-clustering-of-transcriptional-misregulations) [D](#functional-analysis-of-misregulated-genes) [E](#transcriptional-effects-resolved-in-space-and-time) | [A-H,J,K](#synergistic-effects) | [A](#summary) [B,C](#transcriptional-effects-resolved-in-space-and-time)                            |
+| [B](#27--chromatin-and-rna-dynamics) [C](#28--hilbert-curves) [D](#211-spatio-temporal-dynamics) [E](#214-functional-annotations) [F](#212-gene-architecture) [G](#213-maternal-and-zygotic-contributions-to-transcriptome) | [C](#32--hierarchical-clustering-of-transcriptional-misregulations) [D](#33--functional-analysis-of-misregulated-genes) [E](#34--transcriptional-effects-in-space-and-time) | [A-H,J,K](#35--synergistic-effects) | [A](#36--summary) [B,C](#34--transcriptional-effects-in-space-and-time)                            |
 
 |             Figure S1             |           Figure S2           |               Figure S3            |
 | :-------------------------------: | :---------------------------: | :--------------------------------: | 
 |     ![](./suppl_files/FigS1.png)  | ![](./suppl_files/FigS2.png)  |     ![](./suppl_files/FigS3.png)   |
-| [A,B,L](#chromatin-and-rna-dynamics) [D](#correlations) [F](#spatio-temporal-dynamics) [K](#gene-architecture) | [C-F](#transcriptional-effects-resolved-in-space-and-time) | [A-N](#synergistic-effects)
-
+| [A,B,L](#27--chromatin-and-rna-dynamics) [D](#26--correlations) [F](#211-spatio-temporal-dynamics) [K](#212-gene-architecture) | [C-F](#34--transcriptional-effects-in-space-and-time) | [A-N](#35--synergistic-effects)
 
 ## Analysis
 
