@@ -843,11 +843,7 @@ pdf("FigS1D_pol2vs4sU_sprCor.pdf", width=5, height=5)
     heatmap.2( spr.cor,Rowv=F,Colv=F,dendrogram="none",breaks=bre.r.val,col=col.r.val,key=T,symkey=T,density.info="none",trace="none",cellnote=round(spr.cor,2),notecol="black",notecex=2, cexRow=1, cexCol=1, margin=c(10,10))
 dev.off()
 ```
-
-<p align="center">
-<img src="./suppl_files/FigS1D_pol2vs4sU_sprCor.pdf" width="50%">
-</p>
-Download Spearman correlation heatmap:\ <a href="./suppl_files/FigS1D_pol2vs4sU_sprCor.pdf">PDF</a>
+Download Spearman correlation heatmap: <a href="./suppl_files/FigS1D_pol2vs4sU_sprCor.pdf">PDF</a>
 
 #### 2.7  Chromatin and RNA dynamics
 
@@ -911,9 +907,15 @@ Chromatin and RNA dynamics (Figure 1B and S1A)
 <p align="center">
 <img src="./suppl_files/Fig1B_S1A_pol2_st6to12_h3x_rzpaRNAei_4sU_mat.png" width="100%">
 </p>
-Download heatmap:\ <a href="./suppl_files/Fig1B_S1A_pol2_st6to12_h3x_rzpaRNAei_4sU_mat.png">PNG</a>
+Download ZGA heatmap: <a href="./suppl_files/Fig1B_S1A_pol2_st6to12_h3x_rzpaRNAei_4sU_mat.png">PNG</a>
+Download color bars (PDF): <a href="./suppl_files/Pol2_colorbar.pdf">RNAPII (fold enrichment)</a> | 
+<a href="./suppl_files/H3K4me3_colorbar.pdf">H3K4me3 (fold enrichment)</a> |  
+<a href="./suppl_files/H3K36me3_colorbar.pdf">H3K36me3 (fold enrichment)</a> |
+<a href="./suppl_files/RNA_colorbar.pdf">Relative RNA level</a> |  
+<a href="./suppl_files/4sU_colorbar.pdf">4sU (fold enrichment)</a> |  
+<a href="./suppl_files/Mat_colorbar.pdf">Maternal contribution (TPM)</a>
 
-This image contains the following chromatin or RNA profiles from left to right:
+This ZGA heatmap image contains the following chromatin or RNA profiles from left to right:
 
 Feature       | Scale
 ------------- | -----------------------------------------------------------------------------------------------------------
@@ -927,27 +929,6 @@ total RNA     | Normalized intronic levels of total RNA from fertilization to th
 poly(A) RNA   | Normalized intronic levels of poly(A) RNA levels from fertilization to the early neurula stage
 4sU RNA       | Enrichment against input RNA at the MBT and early/mid-gastrula stage
 total RNA     | Maternal contribution (average TPM from 0 to 1 hpf)
-
-Scale bars for ZGA heatmap. Press link for download:
-
-<p align="left">
-<img src="./suppl_files/Pol2_colorbar.pdf" width="20%">
-<img src="./suppl_files/H3K4me3_colorbar.pdf" width="20%">
-<img src="./suppl_files/H3K36me3_colorbar.pdf" width="20%">
-</p>
-<a href="./suppl_files/Pol2_colorbar.pdf">RNAPII (fold enrichment)</a>\ \ |\ \ 
-<a href="./suppl_files/H3K4me3_colorbar.pdf">H3K4me3 (fold enrichment)</a>\ \ |\ \ 
-<a href="./suppl_files/H3K36me3_colorbar.pdf">H3K36me3 (fold enrichment)
-
-<p align="left">
-<img src="./suppl_files/RNA_colorbar.pdf" width="20%">
-<img src="./suppl_files/4sU_colorbar.pdf" width="20%">
-<img src="./suppl_files/Mat_colorbar.pdf" width="20%">
-</p>
-<a href="./suppl_files/RNA_colorbar.pdf">Relative RNA level</a>\ \ |\ \ 
-<a href="./suppl_files/4sU_colorbar.pdf">4sU (fold enrichment)</a>\ \ |\ \ 
-<a href="./suppl_files/Mat_colorbar.pdf">Maternal contribution (TPM)</a>
-
 
 ```{r TRANSCRIPT EXON & INTRON LEVELS, eval=FALSE}
 tpm.pol2.smooth.predict[tpm.pol2.smooth.predict < 0]            <- 0
@@ -991,14 +972,9 @@ abline(v=4.5,col="black",lty=1)
 dev.off()
 ```
 
-Transcript feature levels (mean +/- SD) during ZGA (Figure S1B): red, exonic (total RNA), blue, intronic (total RNA), and yellow, intronic (poly(A) RNA).
-
-<p align="left">
-<img src="./suppl_files/FigS1B_meta_zyg_matRNA_smooth_log.pdf" width="40%">
-<img src="./suppl_files/FigS1B_meta_matRNA_smooth_log.pdf" width="40%">
-</p>
-
-Download transcript meta-profile (log~10~ scale): <a href="./suppl_files/FigS1B_meta_zyg_matRNA_smooth_log.pdf">RNAPII+ genes</a>\ |\ <a href="./suppl_files/FigS1B_meta_matRNA_smooth_log.pdf">RNAPII- genes</a>
+Transcript feature levels (mean +/- SD) during ZGA (Figure S1B): red, exonic (total RNA), blue, intronic (total RNA), and yellow, intronic (poly(A) RNA). Download transcript meta-profile (log~10~ scale): 
+<a href="./suppl_files/FigS1B_meta_zyg_matRNA_smooth_log.pdf">RNAPII+ genes</a> | 
+<a href="./suppl_files/FigS1B_meta_matRNA_smooth_log.pdf">RNAPII- genes</a>
 
 
 Venn diagram of temporal ZGA
@@ -1020,12 +996,7 @@ pdf("zga_venn_diagram.pdf")
 vennDiagram( vennCounts( pol2.positive ))
 dev.off()
 ```
-
-<p align="left">
-<img src="./suppl_files/zga_venn_diagram.pdf" width="40%">
-</p>
-
-Download\ <a href="./suppl_files/zga_venn_diagram.pdf">Venn diagram</a>\ showing overlap of genes active at the 32/128-cell stage, the 1,024-cell stage, the MBT, the mid-gastrula and late gastrula stage.
+Download <a href="./suppl_files/zga_venn_diagram.pdf">Venn diagram</a> showing overlap of genes active at the 32/128-cell stage, the 1,024-cell stage, the MBT, the mid-gastrula and late gastrula stage.
 
 
 ```{r RNAPII META-PROFILES, eval=FALSE}
@@ -1083,12 +1054,7 @@ pdf("FigS1L_meta_pol2_zygRNA_st6to12p_log", width=3, height=8)
 dev.off()
 ```
 
-Metaprofile (mean +/- SD) for RNAPII and input (negative control) at zygotic genes (Figure S1L): RNAPII shows log normal distribution. Thus, log norm metrics were used.
-
-<p align="left">
-<img src="./suppl_files/FigS1L_meta_pol2_zygRNA_st6to12p_log.pdf" width="40%">
-</p>
-Download RNAPII meta-profile:\ <a href="./suppl_files/FigS1L_meta_pol2_zygRNA_st6to12p_log.pdf">PDF</a>\
+Metaprofile (mean +/- SD) for RNAPII and input (negative control) at zygotic genes (Figure S1L): RNAPII shows log normal distribution. Thus, log norm metrics were used. Download RNAPII meta-profile: <a href="./suppl_files/FigS1L_meta_pol2_zygRNA_st6to12p_log.pdf">PDF</a>.
 
 
 #### 2.8  Hilbert curves
@@ -1156,7 +1122,7 @@ dev.off()
 <img src="./suppl_files/Fig1C_pol2_st8p_xt91_hilbert.png" width="33%">
 <img src="./suppl_files/Fig1C_chrom_xt91_hilbert.png" width="33%">
 </p>
-Download RNAPII Hilbert curves:\ <a href="./suppl_files/Fig1C_pol2_st7_xt91_hilbert.png">128-cell</a>\ |\ <a href="./suppl_files/Fig1C_pol2_st8p_xt91_hilbert.png">MBT</a>\ |\ <a href="./suppl_files/Fig1C_chrom_xt91_hilbert.png">gene examples</a>
+Download RNAPII Hilbert curves: <a href="./suppl_files/Fig1C_pol2_st7_xt91_hilbert.png">128-cell</a> | <a href="./suppl_files/Fig1C_pol2_st8p_xt91_hilbert.png">MBT</a> | <a href="./suppl_files/Fig1C_chrom_xt91_hilbert.png">gene examples</a>
 
 #### 2.9  Gene annotations
 
@@ -1424,12 +1390,7 @@ cat( "32c", "128c", "1,000c", "MBT", "midG", "lateG\n", sep="\t" )
 cat( n.uniform, sep="\t")
 sink()
 ```
-
-Alluvial plots (Figure 1D and S1F):
-<p align="left">
-<img src="./suppl_files/Fig1D_alluvial_regional_FC3.pdf" width="50%">
-</p>
-Download Alluvial plot and metrics:\ <a href="./suppl_files/Fig1D_alluvial_regional_FC3.pdf">PDF</a>\ |\ <a href="./suppl_files/Fig1D_zga_uni_vs_spatial_stats.txt">TXT</a>\
+Download Alluvial plot (Figure 1D) and metrics: <a href="./suppl_files/Fig1D_alluvial_regional_FC3.pdf">PDF</a> | <a href="./suppl_files/Fig1D_zga_uni_vs_spatial_stats.txt">TXT</a>
 
 
 #### 2.12 Gene architecture
@@ -1572,12 +1533,10 @@ cat("## zygotic genes (mid-gastrula) versus zygotic genes (late gastrula)\n")
 cat("p[exact]=",mww.g.11_12p$p.value,"\n","Z=",qnorm(mww.g.11_12p$p.value),"\n","r[effect size]=",r.mww.g.11_12p, sep="")
 sink()
 ```
-
-Beeswarm plot showing distribution of gene lengths (Figure 1F):
-<p align="left">
-<img src="./suppl_files/Fig1F_mat_zyg_geneLen_pol2_st6to12p.pdf" width="100%">
-</p>
-Download beeswarm plot, metrics and Wilcoxon rank-sum test results:\ <a href="./suppl_files/Fig1F_mat_zyg_geneLen_pol2_st6to12p.pdf">PDF</a>\ |\ <a href="./suppl_files/Fig1F_mat_zyg_geneLen_pol2_st6to12p.csv">CSV</a>\ |\ <a href="./suppl_files/Fig1F_mat_zyg_geneLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
+Download beeswarm plot showing gene length distribution (Figure 1F), metrics and Wilcoxon rank-sum test results: 
+<a href="./suppl_files/Fig1F_mat_zyg_geneLen_pol2_st6to12p.pdf">PDF</a> | 
+<a href="./suppl_files/Fig1F_mat_zyg_geneLen_pol2_st6to12p.csv">CSV</a> | 
+<a href="./suppl_files/Fig1F_mat_zyg_geneLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
 
 
 ```{r mRNA LENGTH, eval=FALSE}
@@ -1676,11 +1635,10 @@ cat("p[exact]=",mww.t.11_12p$p.value,"\n","Z=",qnorm(mww.t.11_12p$p.value),"\n",
 sink()
 ```
 
-Beeswarm plot showing distribution of mRNA lengths (Figure S1K):
-<p align="left">
-<img src="./suppl_files/FigS1K_mat_zyg_txLen_pol2_st6to12p.pdf" width="100%">
-</p>
-Download beeswarm plot, metrics and Wilcoxon rank-sum test results:\ <a href="./suppl_files/FigS1K_mat_zyg_txLen_pol2_st6to12p.pdf">PDF</a>\ |\ <a href="./suppl_files/FigS1K_mat_zyg_txLen_pol2_st6to12p.csv">CSV</a>\ |\ <a href="./suppl_files/FigS1K_mat_zyg_txLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
+Download beeswarm plot showing mRNA length distribution (Figure S1K), metrics and Wilcoxon rank-sum test results: 
+<a href="./suppl_files/Fig1F_mat_zyg_txLen_pol2_st6to12p.pdf">PDF</a> | 
+<a href="./suppl_files/Fig1F_mat_zyg_txLen_pol2_st6to12p.csv">CSV</a> | 
+<a href="./suppl_files/Fig1F_mat_zyg_txLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
 
 ```{r INTRON COUNT, eval=FALSE}
 # INTRON COUNT
@@ -1776,12 +1734,10 @@ cat("## zygotic genes (mid-gastrula) versus zygotic genes (late gastrula)\n")
 cat("p[exact]=",mww.ic.11_12p$p.value,"\n","Z=",qnorm(mww.ic.11_12p$p.value),"\n","r[effect size]=",r.mww.ic.11_12p, sep="")
 sink()
 ```
-
-Beeswarm plot showing distribution of intron counts (Figure S1K):
-<p align="left">
-<img src="./suppl_files/FigS1K_mat_zyg_intronCount_pol2_st6to12p.pdf" width="100%">
-</p>
-Download beeswarm plot, metrics and Wilcoxon rank-sum test results:\ <a href="./suppl_files/FigS1K_mat_zyg_intronCount_pol2_st6to12p.pdf">PDF</a>\ |\ <a href="./suppl_files/FigS1K_mat_zyg_intronCount_pol2_st6to12p.csv">CSV</a>\ |\ <a href="./suppl_files/FigS1K_mat_zyg_intronCount_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
+Download beeswarm plot showing intron count distribution (Figure S1K), metrics and Wilcoxon rank-sum test results: 
+<a href="./suppl_files/Fig1F_mat_zyg_intronCount_pol2_st6to12p.pdf">PDF</a> | 
+<a href="./suppl_files/Fig1F_mat_zyg_intronCount_pol2_st6to12p.csv">CSV</a> | 
+<a href="./suppl_files/Fig1F_mat_zyg_intronCount_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
 
 ```{r CDS LENGTH, eval=FALSE}
 # CDS LENGTH
@@ -1877,12 +1833,10 @@ cat("## zygotic genes (mid-gastrula) versus zygotic genes (late gastrula)\n")
 cat("p[exact]=",mww.cds.11_12p$p.value,"\n","Z=",qnorm(mww.cds.11_12p$p.value),"\n","r[effect size]=",r.mww.cds.11_12p, sep="")
 sink()
 ```
-
-Beeswarm plot showing distribution of CDS length (Figure S1K):
-<p align="left">
-<img src="./suppl_files/FigS1K_mat_zyg_cdsLen_pol2_st6to12p.pdf" width="100%">
-</p>
-Download beeswarm plot, metrics and Wilcoxon rank-sum test results:\ <a href="./suppl_files/FigS1K_mat_zyg_cdsLen_pol2_st6to12p.pdf">PDF</a>\ |\ <a href="./suppl_files/FigS1K_mat_zyg_cdsLen_pol2_st6to12p.csv">CSV</a>\ |\ <a href="./suppl_files/FigS1K_mat_zyg_cdsLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
+Download beeswarm plot showing CDS length distribution (Figure S1K), metrics and Wilcoxon rank-sum test results: 
+<a href="./suppl_files/Fig1F_mat_zyg_cdsLen_pol2_st6to12p.pdf">PDF</a> | 
+<a href="./suppl_files/Fig1F_mat_zyg_cdsLen_pol2_st6to12p.csv">CSV</a> | 
+<a href="./suppl_files/Fig1F_mat_zyg_cdsLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
 
 ```{r AVERAGE INTRON LENGTH, eval=FALSE}
 # AVERAGE INTRON LENGTH
@@ -1978,12 +1932,10 @@ cat("## zygotic genes (mid-gastrula) versus zygotic genes (late gastrula)\n")
 cat("p[exact]=",mww.ai.11_12p$p.value,"\n","Z=",qnorm(mww.ai.11_12p$p.value),"\n","r[effect size]=",r.mww.ai.11_12p, sep="")
 sink()
 ```
-
-Beeswarm plot showing distribution of CDS length (Figure S1K):
-<p align="left">
-<img src="./suppl_files/FigS1K_mat_zyg_avIntronLen_pol2_st6to12p.pdf" width="100%">
-</p>
-Download beeswarm plot, metrics and Wilcoxon rank-sum test results:\ <a href="./suppl_files/FigS1K_mat_zyg_avIntronLen_pol2_st6to12p.pdf">PDF</a>\ |\ <a href="./suppl_files/FigS1K_mat_zyg_avIntronLen_pol2_st6to12p.csv">CSV</a>\ |\ <a href="./suppl_files/FigS1K_mat_zyg_avIntronLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
+Download beeswarm plot showing average intron length distribution (Figure S1K), metrics and Wilcoxon rank-sum test results: 
+<a href="./suppl_files/Fig1F_mat_zyg_avIntronLen_pol2_st6to12p.pdf">PDF</a> | 
+<a href="./suppl_files/Fig1F_mat_zyg_avIntronLen_pol2_st6to12p.csv">CSV</a> | 
+<a href="./suppl_files/Fig1F_mat_zyg_avIntronLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
 
 ```{r 3\'UTR LENGTH, eval=FALSE}
 # 3'UTR LENGTH
@@ -2080,11 +2032,10 @@ cat("p[exact]=",mww.u3.11_12p$p.value,"\n","Z=",qnorm(mww.u3.11_12p$p.value),"\n
 sink()
 ```
 
-Beeswarm plot showing distribution of 3'UTR length (Figure S1K):
-<p align="left">
-<img src="./suppl_files/FigS1K_mat_zyg_utr3Len_pol2_st6to12p.pdf" width="100%">
-</p>
-Download beeswarm plot, metrics and Wilcoxon rank-sum test results:\ <a href="./suppl_files/FigS1K_mat_zyg_utr3Len_pol2_st6to12p.pdf">PDF</a>\ |\ <a href="./suppl_files/FigS1K_mat_zyg_utr3Len_pol2_st6to12p.csv">CSV</a>\ |\ <a href="./suppl_files/FigS1K_mat_zyg_utr3Len_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
+Download beeswarm plot showing 3'UTR length distribution (Figure S1K), metrics and Wilcoxon rank-sum test results: 
+<a href="./suppl_files/Fig1F_mat_zyg_utr3Len_pol2_st6to12p.pdf">PDF</a> | 
+<a href="./suppl_files/Fig1F_mat_zyg_utr3Len_pol2_st6to12p.csv">CSV</a> | 
+<a href="./suppl_files/Fig1F_mat_zyg_utr3Len_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
 
 ```{r 5\'UTR LENGTH, eval=FALSE}
 # 5'UTR LENGTH
@@ -2181,11 +2132,10 @@ cat("p[exact]=",mww.u5.11_12p$p.value,"\n","Z=",qnorm(mww.u5.11_12p$p.value),"\n
 sink()
 ```
 
-Beeswarm plot showing distribution of 5'UTR length (Figure S1K):
-<p align="left">
-<img src="./suppl_files/FigS1K_mat_zyg_utr5Len_pol2_st6to12p.pdf" width="100%">
-</p>
-Download beeswarm plot, metrics and Wilcoxon rank-sum test results:\ <a href="./suppl_files/FigS1K_mat_zyg_utr5Len_pol2_st6to12p.pdf">PDF</a>\ |\ <a href="./suppl_files/FigS1K_mat_zyg_utr5Len_pol2_st6to12p.csv">CSV</a>\ |\ <a href="./suppl_files/FigS1K_mat_zyg_utr5Len_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
+Download beeswarm plot showing 5'UTR length distribution (Figure S1K), metrics and Wilcoxon rank-sum test results: 
+<a href="./suppl_files/Fig1F_mat_zyg_utr5Len_pol2_st6to12p.pdf">PDF</a> | 
+<a href="./suppl_files/Fig1F_mat_zyg_utr5Len_pol2_st6to12p.csv">CSV</a> | 
+<a href="./suppl_files/Fig1F_mat_zyg_utr5Len_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
 
 
 #### 2.13 Maternal and zygotic contributions to transcriptome
@@ -2242,11 +2192,9 @@ pdf("Fig1G_mat_zyg_contribution_pie_chart.pdf", height=1, width=7)
 dev.off()
 ```
 
-Piecharts showing nominal maternal/sygotic contribution to transcriptome (Figure 1G):
-<p align="left">
-<img src="./suppl_files/Fig1G_mat_zyg_contribution_pie_chart.pdf" width="100%">
-</p>
-Download beeswarm plot, metrics and Wilcoxon rank-sum test results:\ <a href="./suppl_files/Fig1G_mat_zyg_contribution_pie_chart.pdf">PDF</a>\ |\ <a href="./suppl_files/Fig1G_mat_zyg_contribution_statistics.csv">CSV</a>
+Download piecharts and statistics showing nominal maternal/sygotic contribution to transcriptome (Figure 1G): 
+<a href="./suppl_files/Fig1G_mat_zyg_contribution_pie_chart.pdf">PDF</a> | 
+<a href="./suppl_files/Fig1G_mat_zyg_contribution_statistics.csv">CSV</a>
 
 #### 2.14 Functional annotations
 
@@ -2373,7 +2321,19 @@ Bubble plot showing enriched gene ontology (GO) terms during ZGA (Figure 1E):
 <p align="left">
 <img src="./suppl_files/Fig1E_GO_ZGA.pdf" width="100%">
 </p>
-Download bubble plot and results of hypergeometric tests yielding overrepresented GO terms at indicated developmental stages:\ <a href="./suppl_files/Fig1E_GO_ZGA.pdf">PDF</a>\ |\ <a href="./suppl_files/hyperGTest_over_activated_st6.csv">32-cell</a>\ |\ <a href="./suppl_files/hyperGTest_over_activated_st6a7.csv">32/128-cell</a>\ |\ <a href="./suppl_files/hyperGTest_over_activated_st7.csv">128-cell</a>\ |\ <a href="./suppl_files/hyperGTest_over_activated_st7a8.csv">128/1,024-cell</a>\ |\ <a href="./suppl_files/hyperGTest_over_activated_st8.csv">1,024-cell</a>\ |\ <a href="./suppl_files/hyperGTest_over_activated_st8a8p.csv">1,024-cell/MBT</a>\ |\ <a href="./suppl_files/hyperGTest_over_activated_st8p.csv">MBT</a>\ |\ <a href="./suppl_files/hyperGTest_over_activated_st8pa11.csv">MBT/mid-gastrula</a>\ |\ <a href="./suppl_files/hyperGTest_over_activated_st11.csv">mid-gastrula</a>\ |\ <a href="./suppl_files/hyperGTest_over_activated_st11a12p.csv">mid/late gastrula</a>\ |\ <a href="./suppl_files/hyperGTest_over_activated_st12p.csv">late gastrula</a>
+Download bubble plot showing enriched gene ontology (GO) terms during ZGA (Figure 1E) and results (CSV) of hypergeometric tests yielding overrepresented GO terms at indicated developmental stages: 
+<a href="./suppl_files/Fig1E_GO_ZGA.pdf">PDF</a> | 
+<a href="./suppl_files/hyperGTest_over_activated_st6.csv">32-cell</a> | 
+<a href="./suppl_files/hyperGTest_over_activated_st6a7.csv">32/128-cell</a> | 
+<a href="./suppl_files/hyperGTest_over_activated_st7.csv">128-cell</a> | 
+<a href="./suppl_files/hyperGTest_over_activated_st7a8.csv">128/1,024-cell</a> | 
+<a href="./suppl_files/hyperGTest_over_activated_st8.csv">1,024-cell</a> | 
+<a href="./suppl_files/hyperGTest_over_activated_st8a8p.csv">1,024-cell/MBT</a> | 
+<a href="./suppl_files/hyperGTest_over_activated_st8p.csv">MBT</a> | 
+<a href="./suppl_files/hyperGTest_over_activated_st8pa11.csv">MBT/mid-gastrula</a> | 
+<a href="./suppl_files/hyperGTest_over_activated_st11.csv">mid-gastrula</a> | 
+<a href="./suppl_files/hyperGTest_over_activated_st11a12p.csv">mid/late gastrula</a> | 
+<a href="./suppl_files/hyperGTest_over_activated_st12p.csv">late gastrula</a>
 
 ### 3. Signal-Mediated Zygotic Genome Activation
 
