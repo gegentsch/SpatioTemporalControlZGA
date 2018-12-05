@@ -756,12 +756,13 @@ close(f2)
 ```
 
 Download TXT/BED files containing genes active at the following developmental stages:  
-* 32-cell (<a href="./suppl_files/pol2_st6_rzRNA_av3tpm.txt">TXT</a>|<a href="./suppl_files/pol2_st6_rzRNA_av3tpm.bed">BED</a>)
-* 128-cell (<a href="./suppl_files/pol2_st7_rzRNA_av3tpm.txt">TXT</a>|<a href="./suppl_files/pol2_st7_rzRNA_av3tpm.bed">BED</a>)
-* 1,024-cell (<a href="./suppl_files/pol2_st8_rzRNA_av3tpm.txt">TXT</a>|<a href="./suppl_files/pol2_st8_rzRNA_av3tpm.bed">BED</a>)
-* MBT (<a href="./suppl_files/pol2_st8p_rzRNA_av3tpm.txt">TXT</a>|<a href="./suppl_files/pol2_st8p_rzRNA_av3tpm.bed">BED</a>)
-* Mid-gastrula (<a href="./suppl_files/pol2_st11_rzRNA_av3tpm.txt">TXT</a>|<a href="./suppl_files/pol2_st11_rzRNA_av3tpm.bed">BED</a>) * Late gastrula (<a href="./suppl_files/pol2_st12p_rzRNA_av3tpm.txt">TXT</a>|<a href="./suppl_files/pol2_st12p_rzRNA_av3tpm.bed"> BED</a>)
-* All stages (<a href="./suppl_files/pol2_st6to12p_rzRNA_av3tpm.txt">TXT</a>|<a href="./suppl_files/pol2_st6to12p_rzRNA_av3tpm.bed">BED</a>)
+* 32-cell (<a href="./suppl_files/pol2_st6_rzRNA_av3tpm.txt">TXT</a>|<a href="./suppl_files/pol2_st6_rzRNA_av3tpm.bed">BED</a>)   
+* 128-cell (<a href="./suppl_files/pol2_st7_rzRNA_av3tpm.txt">TXT</a>|<a href="./suppl_files/pol2_st7_rzRNA_av3tpm.bed">BED</a>)   
+* 1,024-cell (<a href="./suppl_files/pol2_st8_rzRNA_av3tpm.txt">TXT</a>|<a href="./suppl_files/pol2_st8_rzRNA_av3tpm.bed">BED</a>)  
+* MBT (<a href="./suppl_files/pol2_st8p_rzRNA_av3tpm.txt">TXT</a>|<a href="./suppl_files/pol2_st8p_rzRNA_av3tpm.bed">BED</a>)  
+* Mid-gastrula (<a href="./suppl_files/pol2_st11_rzRNA_av3tpm.txt">TXT</a>|<a href="./suppl_files/pol2_st11_rzRNA_av3tpm.bed">BED</a>) 
+* Late gastrula (<a href="./suppl_files/pol2_st12p_rzRNA_av3tpm.txt">TXT</a>|<a href="./suppl_files/pol2_st12p_rzRNA_av3tpm.bed"> BED</a>)  
+* All stages (<a href="./suppl_files/pol2_st6to12p_rzRNA_av3tpm.txt">TXT</a>|<a href="./suppl_files/pol2_st6to12p_rzRNA_av3tpm.bed">BED</a>)  
 
 ```{r TRANSCRIPTIONAL INITIATION, eval=FALSE}
 # Earliest activation as detected by RNAPII enrichment
@@ -820,8 +821,8 @@ close(f5)
 close(f6)
 ```
 
-Download TXT files containing active gene first detected by the following developmental stages:
-<a href="./suppl_files/pol2_st6_actGenes.txt">32-cell </a>|<a href="./suppl_files/pol2_st7_actGenes.txt"> 128-cell </a>|<a href="./suppl_files/pol2_st8_actGenes.txt"> 1,024-cell </a>|<a href="./suppl_files/pol2_st8p_actGenes.txt"> MBT </a>|<a href="./suppl_files/pol2_st11_actGenes.txt"> Mid-gastrula </a>|<a href="./suppl_files/pol2_st12p_actGenes.txt"> Late gastrula </a>
+Download TXT files containing active gene first detected by the following developmental stages: 
+<a href="./suppl_files/pol2_st6_actGenes.txt">32-cell</a>,<a href="./suppl_files/pol2_st7_actGenes.txt"> 128-cell</a>,<a href="./suppl_files/pol2_st8_actGenes.txt"> 1,024-cell</a>,<a href="./suppl_files/pol2_st8p_actGenes.txt"> MBT</a>,<a href="./suppl_files/pol2_st11_actGenes.txt"> mid-gastrula</a> and <a href="./suppl_files/pol2_st12p_actGenes.txt">late gastrula</a>.
 
 #### 2.6  Correlations
 
