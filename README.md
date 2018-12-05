@@ -3395,7 +3395,8 @@ pdf( "Fig2C_zga_lof_ama50_mz.pdf", width=8, height=4 )
 dev.off()
 ```
 
-Download bargraph of LOF effects on ZGA separated by zygotic only and maternal/zygotic genes (Figure 2C): <a href="./suppl_files/Fig2C_zga_lof_ama50_mz.pdf">PDF</a>.
+Download bargraph of LOF effects on ZGA separated by zygotic only and maternal/zygotic genes (Figure 2C): 
+<a href="./suppl_files/Fig2C_zga_lof_ama50_mz.pdf">PDF</a>.
 
 
 #### 3.3 Functional analysis of misregulated genes
@@ -3559,7 +3560,8 @@ theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.
 dev.off()
 ```
 
-Download bubble plot showing selected enriched gene ontology (GO) terms among down- and up-regulated genes (Figure 2D): <a href="./suppl_files/Fig2D_GO_term_LOF_ZGA.pdf">PDF</a>.
+Download bubble plot showing selected enriched gene ontology (GO) terms among down- and up-regulated genes (Figure 2D): 
+<a href="./suppl_files/Fig2D_GO_term_LOF_ZGA.pdf">PDF</a>.
 
 
 #### 3.4  Transcriptional effects in space and time
@@ -3814,7 +3816,7 @@ Download plots and percentage table of down-regulaged genes separated by time an
 
 **Strongest positive effect of Wnt, Nodal and BMP signals on ZGA** (Figure 4D)
 
-Download plots and percentage table of up-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes):\ 
+Download plots and percentage table of up-regulaged genes separated by time and space (animal-vegetal and dorso-ventral axes): 
 <a href="./suppl_files/maxWNBLOF.pdf">summary</a> | 
 <a href="./suppl_files/maxWNBLOF_st6.pdf">32-cell</a> | 
 <a href="./suppl_files/maxWNBLOF_st7.pdf">128-cell</a> | 
@@ -3935,11 +3937,13 @@ plotDifSp( fc.x=fc.x1, fc.y=fc.y, select=select, cl=cl.rna.2, x.lim.min=0, x.lim
 
 **Plot #6** and **#7**: Beeswarm, regional expression along the animal-vegetal (**#6**) and dorso-ventral (**#7**) axis grouped by the synergy factor.
 
-Color bars for regulatory relationship plots. Press link for download: <a href="./suppl_files/SF_colorbar.pdf">Synergy factor</a> | 
-<a href="./suppl_files/AnVg_colorbar.pdf">Animal-vegetal expression ratio</a> | 
-<a href="./suppl_files/DV_colorbar.pdf">Dorso-ventral expression ratio</a>.
+Color bars for regulatory relationship plots. Press link for download: 
+<a href="./suppl_files/SF_colorbar.pdf">synergy factor</a> | 
+<a href="./suppl_files/AnVg_colorbar.pdf">animal-vegetal expression ratio</a> | 
+<a href="./suppl_files/DV_colorbar.pdf">dorso-ventral expression ratio</a>.
 
-Download plots: <a href="./suppl_files/WntLOF_vs_WBLOF_BmpDifZoomForSF.pdf">#1</a> | 
+Download plots: 
+<a href="./suppl_files/WntLOF_vs_WBLOF_BmpDifZoomForSF.pdf">#1</a> | 
 <a href="./suppl_files/WntLOF_vs_WBLOF_NodalDifZoomForSF.pdf">#2</a> | 
 <a href="./suppl_files/WntLOF_vs_WBLOF_SF.pdf">#3</a> | 
 <a href="./suppl_files/WntLOF_vs_WBLOF_spatioAnVgZoomForSF.pdf">#4</a> | 
