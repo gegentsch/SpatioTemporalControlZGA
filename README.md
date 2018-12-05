@@ -20,7 +20,7 @@ This repository contains the R code used to analyze deep sequencing data shown i
     + [2.1 RNA polymerase II enrichment across gene bodies](#21--rna-polymerase-ii-enrichment-across-gene-bodies)
     + [2.2 H3K4me3 and H3K36me3 densities](#22--h3k4me3-and-h3k36me3-densities)
     + [2.3 High time-resolution of exonic and intronic RNA](#23--high-time-resolution-of-exonic-and-intronic-rna)
-    + [2.4 4sU tagging of nascent transcripts](#24--su-tagging-of-nascent-transcripts)
+    + [2.4 4sU tagging of nascent transcripts](#24--4su-tagging-of-nascent-transcripts)
     + [2.5 Statistics](#25--statistics)
     + [2.6 Correlations](#26--correlations)
     + [2.7 Chromatin and RNA dynamics](#27--chromatin-and-rna-dynamics)
@@ -35,7 +35,7 @@ This repository contains the R code used to analyze deep sequencing data shown i
     + [3.1 Differential expression analysis](#31--differential-expression-analysis)
     + [3.2 Hierarchical clustering of transcriptional misregulations](#32--hierarchical-clustering-of-transcriptional-misregulations)
     + [3.3 Functional analysis of misregulated genes](#33--functional-analysis-of-misregulated-genes)
-    + [3.4 Transcriptional effects resolved in space and time](#34--transcriptional-effects-resolved-in-space-and-time)
+    + [3.4 Transcriptional effects in space and time](#34--transcriptional-effects-in-space-and-time)
     + [3.5 Synergistic effects](#35--synergistic-effects)
     + [3.6 Summary](#36--summary)
   
@@ -3619,7 +3619,7 @@ Bubble plot showing selected enriched gene ontology (GO) terms among down- and u
 </p>
 Download bubble plot:\ <a href="./suppl_files/Fig2D_GO_term_LOF_ZGA.pdf">PDF</a>
 
-#### 3.4  Transcriptional effects resolved in space and time
+#### 3.4  Transcriptional effects in space and time
 
 ```{r SPATIO-TEMPORAL ZGA LOF, eval=FALSE}
 perc.tpm$minWNBLOF.st8to10.uni.mean <- apply( perc.tpm[, 3:9 ], 1, min )
