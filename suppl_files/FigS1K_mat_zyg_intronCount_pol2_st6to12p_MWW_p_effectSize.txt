@@ -1,0 +1,83 @@
+## Wilcoxon rank-sum test (alternative hypothesis: intron count of control group smaller than those of experimental group y<x) ##
+
+## Cohen criteria of effect size (r): 0.1 small effect, 0.3 medium effect, and 0.5 large effect ##
+
+## zygotic genes (32c) versus maternal genes (0-1 h.p.f.)
+p[exact]=5.429205e-14
+Z=-7.430017
+r[effect size]=0.06732894
+
+## zygotic genes (128c) versus maternal genes (0-1 h.p.f.)
+p[exact]=8.015162e-42
+Z=-13.49817
+r[effect size]=0.1218676
+
+## zygotic genes (1000c) versus maternal genes (0-1 h.p.f.)
+p[exact]=4.090764e-88
+Z=-19.86496
+r[effect size]=0.1738865
+
+## zygotic genes (MBT) versus maternal genes (0-1 h.p.f.)
+p[exact]=0.2136411
+Z=-0.7938511
+r[effect size]=0.1678596
+
+## zygotic genes (mid-gastrula) versus maternal genes (0-1 h.p.f.)
+p[exact]=0.5460363
+Z=0.1156533
+r[effect size]=0.001019259
+
+## zygotic genes (late gastrula) versus maternal genes (0-1 h.p.f.)
+p[exact]=0.9952496
+Z=2.593488
+r[effect size]=0.02243364
+
+## zygotic genes (32c) versus zygotic genes (mid-gastrula)
+p[exact]=2.1084e-13
+Z=-7.248414
+r[effect size]=0.2644984
+
+## zygotic genes (128c) versus zygotic genes (mid-gastrula)
+p[exact]=9.366556e-36
+Z=-12.42665
+r[effect size]=0.428505
+
+## zygotic genes (1000c) versus zygotic genes (mid-gastrula)
+p[exact]=2.069684e-41
+Z=-13.42809
+r[effect size]=0.3332125
+
+## zygotic genes (MBT) versus zygotic genes (mid-gastrula)
+p[exact]=0.280953
+Z=-0.5800127
+r[effect size]=0.01142342
+
+## zygotic genes (late gastrula) versus zygotic genes (mid-gastrula)
+p[exact]=0.9342243
+Z=1.508012
+r[effect size]=0.03425532
+
+## zygotic genes (32c) versus zygotic genes (late gastrula)
+p[exact]=2.417236e-14
+Z=-7.536313
+r[effect size]=0.2139306
+
+## zygotic genes (128c) versus zygotic genes (late gastrula)
+p[exact]=2.247754e-41
+Z=-13.42198
+r[effect size]=0.3678981
+
+## zygotic genes (1000c) versus zygotic genes (late gastrula)
+p[exact]=3.706006e-66
+Z=-17.14041
+r[effect size]=0.3727939
+
+## zygotic genes (MBT) versus zygotic genes (late gastrula)
+p[exact]=0.003759354
+Z=-2.672952
+r[effect size]=0.04825735
+
+## zygotic genes (mid-gastrula) versus zygotic genes (late gastrula)
+p[exact]=0.06578642
+Z=-1.507928
+r[effect size]=0.03425341
