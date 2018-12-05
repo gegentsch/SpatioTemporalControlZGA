@@ -261,19 +261,21 @@ Here we use the continuous occupancy of RNAPII along gene bodies as a method to 
 
 #### 2.1  RNA polymerase II enrichment across gene bodies
 
-Calculate the enrichment of RNAP polymerase II (RNAPII) across gene bodies at the following developmental stages using normalised read density maps of RNAPII and high-complexity input. ChIP-Seq reads of maximal 50 bases were processed using [trim_galore](https://www.bioinformatics.babraham.ac.uk/projects/trim_galore) to trim off low-quality bases (default Phred score of 20, i.e. error probability was 0.01) and adapter contamination from the 3’ end. Processed reads were aligned to the X. tropicalis genome assembly v7.1 and v9.1 (for Hilbert curves) running [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2) with default settings. Alignments were converted to the [HOMER](http://homer.ucsd.edu/homer) tag density format with redundant reads being removed:
-
-*makeTagDirectory -single -tbp 1 -unique -mapq 10 -fragLength 175 -totalReads all*
-
-Only uniquely aligned reads (i.e. MAPQ ≥10) were processed. We pooled all input alignments from various developmental stages ([Gentsch *et al.*, 2018](https://www.biorxiv.org/content/early/2018/04/23/306803)). This created a comprehensive mappability profile or high-complexity input that covered ~400 million unique base pair positions.
+Calculate the enrichment of RNAP polymerase II (RNAPII) across gene bodies at the following developmental stages using normalised read density maps of RNAPII and high-complexity input: 
 
 * 32-cell stage (stage 6 after Nieuwkoop and Faber, 1994)
 * 128-cell stage (stage 7)
 * 1,024-cell stage (stage 8)
-* mid-blastula transition (MBT) (stage 8.5)
-* mid-gastrula stage (stage 11)
-* the late gastrula stage (stage 12.5) 
-* early neurula stage (stage 13.5) 
+* Mid-blastula transition (MBT) (stage 8.5)
+* Mid-gastrula stage (stage 11)
+* Late gastrula stage (stage 12.5) 
+* Early neurula stage (stage 13.5) 
+
+ChIP-Seq reads of maximal 50 bases were processed using [trim_galore](https://www.bioinformatics.babraham.ac.uk/projects/trim_galore) to trim off low-quality bases (default Phred score of 20, i.e. error probability was 0.01) and adapter contamination from the 3’ end. Processed reads were aligned to the X. tropicalis genome assembly v7.1 and v9.1 (for Hilbert curves) running [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2) with default settings. Alignments were converted to the [HOMER](http://homer.ucsd.edu/homer) tag density format with redundant reads being removed:
+
+*makeTagDirectory -single -tbp 1 -unique -mapq 10 -fragLength 175 -totalReads all*
+
+Only uniquely aligned reads (i.e. MAPQ ≥10) were processed. We pooled all input alignments from various developmental stages ([Gentsch *et al.*, 2018](https://www.biorxiv.org/content/early/2018/04/23/306803)). This created a comprehensive mappability profile or high-complexity input that covered ~400 million unique base pair positions.
 
 Normalized RNAPII and input tag densities were calculated across the gene body in 10 bins of equal size. Gene annotations v7.1 were altered based on a few known zygotic isoforms and some corrections obtained from assembling total and poly(A) RNA ([Owens *et al.*, 2016](https://www.cell.com/cell-reports/fulltext/S2211-1247(15)01491-6)) from stage 6 to stage 12.5 *de novo* ([Pertea *et al.*, 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5032908/)). A few genes had previously been annotated as gene clusters due to assembly uncertainties. We reduced the annotation of polycistronic MIR-427 to the minus arm (scaffold_3b:3516900-3523400) and only monitored nodal3.5 and nodal5.3 within their respective gene clusters.
 
@@ -297,12 +299,12 @@ pol2.genebody.bins.e.st6to13 <- pol2.genebody.bins[ ,1:70 ] / pol2.genebody.bins
 
 #### 2.2  H3K4me3 and H3K36me3 densities
 
-Calculate the enrichment of H3K4me3 and H3K36me3 (Hontelez *et al.*, 2015) across gene bodies at the following developmental stages using normalised read density maps.
+Calculate the enrichment of H3K4me3 and H3K36me3 (Hontelez *et al.*, 2015) across gene bodies at the following developmental stages using normalised read density maps:
 
 * 1,024-cell stage (H3K4me3 only)
-* mid-blastula transition (MBT) (H3K4me3 and H3K36me3)
-* early gastrula stage (stage 10.5, H3K4me3 and H3K36me3)
-* late gastrula stage (stage 12, H3K4me3 and H3K36me3)
+* Mid-blastula transition (MBT) (H3K4me3 and H3K36me3)
+* Early gastrula stage (stage 10.5, H3K4me3 and H3K36me3)
+* Late gastrula stage (stage 12, H3K4me3 and H3K36me3)
 
 ```{r HISTONE MARK DENSITY MAP UPLOAD, eval=FALSE}
 h3k4me3.genebody.bins <- read.table( "./chromatin/h3k4me3_st8to12_input_xt71_genebody_10bins.txt.gz", header=TRUE, row.names="Gene" )
@@ -466,7 +468,7 @@ tpm3 <- which( apply( rh.rna.gb[ ,t1:t2], 1, function(x) any(stats::filter(x,rep
 zga <- rh.rna.gb[tpm3,]
 ```
 
-Calculation of maternally deposited mRNA transcripts. 
+Calculation the level of maternally deposited mRNA transcripts (TPM, transcripts per million). 
 
 ```{r MATERNAL, eval=FALSE}
 # Calculate mean from 3 time points from 0-1 hpf (TPM)
@@ -753,7 +755,13 @@ close(f1)
 close(f2)
 ```
 
-Download TXT/BED files containing genes active at the following developmental stages: 32-cell, <a href="./suppl_files/pol2_st6_rzRNA_av3tpm.txt">TXT </a>|<a href="./suppl_files/pol2_st6_rzRNA_av3tpm.bed"> BED</a>, 128-cell, <a href="./suppl_files/pol2_st7_rzRNA_av3tpm.txt">TXT </a>|<a href="./suppl_files/pol2_st7_rzRNA_av3tpm.bed"> BED</a>, 1,024-cell, <a href="./suppl_files/pol2_st8_rzRNA_av3tpm.txt">TXT </a>|<a href="./suppl_files/pol2_st8_rzRNA_av3tpm.bed"> BED</a>, MBT, <a href="./suppl_files/pol2_st8p_rzRNA_av3tpm.txt">TXT </a>|<a href="./suppl_files/pol2_st8p_rzRNA_av3tpm.bed"> BED</a>, mid-gastrula, <a href="./suppl_files/pol2_st11_rzRNA_av3tpm.txt">TXT </a>|<a href="./suppl_files/pol2_st11_rzRNA_av3tpm.bed"> BED</a>, late gastrula, <a href="./suppl_files/pol2_st12p_rzRNA_av3tpm.txt">TXT </a>|<a href="./suppl_files/pol2_st12p_rzRNA_av3tpm.bed"> BED</a>, and all stages, <a href="./suppl_files/pol2_st6to12p_rzRNA_av3tpm.txt">TXT </a>|<a href="./suppl_files/pol2_st6to12p_rzRNA_av3tpm.bed"> BED</a>
+Download TXT/BED files containing genes active at the following developmental stages:  
+* 32-cell (<a href="./suppl_files/pol2_st6_rzRNA_av3tpm.txt">TXT</a>|<a href="./suppl_files/pol2_st6_rzRNA_av3tpm.bed">BED</a>)
+* 128-cell (<a href="./suppl_files/pol2_st7_rzRNA_av3tpm.txt">TXT</a>|<a href="./suppl_files/pol2_st7_rzRNA_av3tpm.bed">BED</a>)
+* 1,024-cell (<a href="./suppl_files/pol2_st8_rzRNA_av3tpm.txt">TXT</a>|<a href="./suppl_files/pol2_st8_rzRNA_av3tpm.bed">BED</a>)
+* MBT (<a href="./suppl_files/pol2_st8p_rzRNA_av3tpm.txt">TXT</a>|<a href="./suppl_files/pol2_st8p_rzRNA_av3tpm.bed">BED</a>)
+* Mid-gastrula (<a href="./suppl_files/pol2_st11_rzRNA_av3tpm.txt">TXT</a>|<a href="./suppl_files/pol2_st11_rzRNA_av3tpm.bed">BED</a>) * Late gastrula (<a href="./suppl_files/pol2_st12p_rzRNA_av3tpm.txt">TXT</a>|<a href="./suppl_files/pol2_st12p_rzRNA_av3tpm.bed"> BED</a>)
+* All stages (<a href="./suppl_files/pol2_st6to12p_rzRNA_av3tpm.txt">TXT</a>|<a href="./suppl_files/pol2_st6to12p_rzRNA_av3tpm.bed">BED</a>)
 
 ```{r TRANSCRIPTIONAL INITIATION, eval=FALSE}
 # Earliest activation as detected by RNAPII enrichment
@@ -813,7 +821,7 @@ close(f6)
 ```
 
 Download TXT files containing active gene first detected by the following developmental stages:
-<a href="./suppl_files/pol2_st6_actGenes.txt">32-cell </a>|<a href="./suppl_files/pol2_st7_actGenes.txt"> 128-cell </a>|<a href="./suppl_files/pol2_st8_actGenes.txt"> 1,024-cell </a>|<a href="./suppl_files/pol2_st8p_actGenes.txt"> MBT </a>|<a href="./suppl_files/pol2_st11_actGenes.txt"> Mid-gastrula  </a>|<a href="./suppl_files/pol2_st12p_actGenes.txt"> Late gastrula </a>
+<a href="./suppl_files/pol2_st6_actGenes.txt">32-cell </a>|<a href="./suppl_files/pol2_st7_actGenes.txt"> 128-cell </a>|<a href="./suppl_files/pol2_st8_actGenes.txt"> 1,024-cell </a>|<a href="./suppl_files/pol2_st8p_actGenes.txt"> MBT </a>|<a href="./suppl_files/pol2_st11_actGenes.txt"> Mid-gastrula </a>|<a href="./suppl_files/pol2_st12p_actGenes.txt"> Late gastrula </a>
 
 #### 2.6  Correlations
 
