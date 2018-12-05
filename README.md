@@ -15,7 +15,7 @@ This repository contains the R code used to analyze deep sequencing data shown i
   * [Data Availability](#data-availability)
   * [Figure Shortcuts](#figure-shortcuts)
   * [Analysis](#analysis)
-  * [1. Setup](#1.-setup)
+  * [1. Setup](#1-setup)
   * [2. Profiling Zygotic Genome Activation](#profiling-zygotic-genome-activation)
     + [2.1 RNA polymerase II enrichment across gene bodies](#rna-polymerase-ii-enrichment-across-gene-bodies)
     + [2.2 H3K4me3 and H3K36me3 densities](#h3k4me3-and-h3k36me3-densities)
