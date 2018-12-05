@@ -15,7 +15,7 @@ This repository contains the R code used to analyze deep sequencing data shown i
   * [Data Availability](#data-availability)
   * [Figure Shortcuts](#figure-shortcuts)
   * [Analysis](#analysis)
-  * [1. Setup](#setup)
+  * [1. Setup](#1.-setup)
   * [2. Profiling Zygotic Genome Activation](#profiling-zygotic-genome-activation)
     + [2.1 RNA polymerase II enrichment across gene bodies](#rna-polymerase-ii-enrichment-across-gene-bodies)
     + [2.2 H3K4me3 and H3K36me3 densities](#h3k4me3-and-h3k36me3-densities)
@@ -49,7 +49,7 @@ This repository contains the R code used to analyze deep sequencing data shown i
 The raw data is or will be available from the GEO archive under the following accession numbers:
 
   * [GSE113186](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE113186): RNAP polymerase II (RNAPII) chromatin profiling (ChIP-Seq)
-  * [GSE67974](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE67974): H3K4me3 and H3K36me3 ChIP-Seq ([Hontelez *et al.*,2015](https://www.nature.com/articles/ncomms10148))
+  * [GSE67974](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE67974): H3K4me3 and H3K36me3 ChIP-Seq ([Hontelez *et al.*, 2015](https://www.nature.com/articles/ncomms10148))
   * [GSE65785](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE65785): High-time resolution of total and poly(A) RNA (RNA-Seq) ([Owens *et al.*, 2016](https://www.cell.com/cell-reports/fulltext/S2211-1247(15)01491-6))
   * [GSE122551](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE122551): 4sU tagging of nascent transcripts (4sU-Seq)
   * [GSE81458](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE81458): Regional gene expression (RNA-Seq) ([Blitz *et al.*, 2017](https://www.sciencedirect.com/science/article/pii/S001216061630118X?via%3Dihub))
