@@ -1627,9 +1627,9 @@ sink()
 ```
 
 Download beeswarm plot showing mRNA length distribution (Figure S1K), metrics and Wilcoxon rank-sum test results: 
-<a href="./suppl_files/Fig1F_mat_zyg_txLen_pol2_st6to12p.pdf">PDF</a> | 
-<a href="./suppl_files/Fig1F_mat_zyg_txLen_pol2_st6to12p.csv">CSV</a> | 
-<a href="./suppl_files/Fig1F_mat_zyg_txLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
+<a href="./suppl_files/FigS1K_mat_zyg_txLen_pol2_st6to12p.pdf">PDF</a> | 
+<a href="./suppl_files/FigS1K_mat_zyg_txLen_pol2_st6to12p.csv">CSV</a> | 
+<a href="./suppl_files/FigS1K_mat_zyg_txLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
 
 ```{r INTRON COUNT, eval=FALSE}
 # INTRON COUNT
@@ -1726,9 +1726,9 @@ cat("p[exact]=",mww.ic.11_12p$p.value,"\n","Z=",qnorm(mww.ic.11_12p$p.value),"\n
 sink()
 ```
 Download beeswarm plot showing intron count distribution (Figure S1K), metrics and Wilcoxon rank-sum test results: 
-<a href="./suppl_files/Fig1F_mat_zyg_intronCount_pol2_st6to12p.pdf">PDF</a> | 
-<a href="./suppl_files/Fig1F_mat_zyg_intronCount_pol2_st6to12p.csv">CSV</a> | 
-<a href="./suppl_files/Fig1F_mat_zyg_intronCount_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
+<a href="./suppl_files/FigS1K_mat_zyg_intronCount_pol2_st6to12p.pdf">PDF</a> | 
+<a href="./suppl_files/FigS1K_mat_zyg_intronCount_pol2_st6to12p.csv">CSV</a> | 
+<a href="./suppl_files/FigS1K_mat_zyg_intronCount_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
 
 ```{r CDS LENGTH, eval=FALSE}
 # CDS LENGTH
@@ -1825,9 +1825,9 @@ cat("p[exact]=",mww.cds.11_12p$p.value,"\n","Z=",qnorm(mww.cds.11_12p$p.value),"
 sink()
 ```
 Download beeswarm plot showing CDS length distribution (Figure S1K), metrics and Wilcoxon rank-sum test results: 
-<a href="./suppl_files/Fig1F_mat_zyg_cdsLen_pol2_st6to12p.pdf">PDF</a> | 
-<a href="./suppl_files/Fig1F_mat_zyg_cdsLen_pol2_st6to12p.csv">CSV</a> | 
-<a href="./suppl_files/Fig1F_mat_zyg_cdsLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
+<a href="./suppl_files/FigS1K_mat_zyg_cdsLen_pol2_st6to12p.pdf">PDF</a> | 
+<a href="./suppl_files/FigS1K_mat_zyg_cdsLen_pol2_st6to12p.csv">CSV</a> | 
+<a href="./suppl_files/FigS1K_mat_zyg_cdsLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
 
 ```{r AVERAGE INTRON LENGTH, eval=FALSE}
 # AVERAGE INTRON LENGTH
@@ -1924,9 +1924,9 @@ cat("p[exact]=",mww.ai.11_12p$p.value,"\n","Z=",qnorm(mww.ai.11_12p$p.value),"\n
 sink()
 ```
 Download beeswarm plot showing average intron length distribution (Figure S1K), metrics and Wilcoxon rank-sum test results: 
-<a href="./suppl_files/Fig1F_mat_zyg_avIntronLen_pol2_st6to12p.pdf">PDF</a> | 
-<a href="./suppl_files/Fig1F_mat_zyg_avIntronLen_pol2_st6to12p.csv">CSV</a> | 
-<a href="./suppl_files/Fig1F_mat_zyg_avIntronLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
+<a href="./suppl_files/FigS1K_mat_zyg_avIntronLen_pol2_st6to12p.pdf">PDF</a> | 
+<a href="./suppl_files/FigS1K_mat_zyg_avIntronLen_pol2_st6to12p.csv">CSV</a> | 
+<a href="./suppl_files/FigS1K_mat_zyg_avIntronLen_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
 
 ```{r 3\'UTR LENGTH, eval=FALSE}
 # 3'UTR LENGTH
@@ -2024,9 +2024,9 @@ sink()
 ```
 
 Download beeswarm plot showing 3'UTR length distribution (Figure S1K), metrics and Wilcoxon rank-sum test results: 
-<a href="./suppl_files/Fig1F_mat_zyg_utr3Len_pol2_st6to12p.pdf">PDF</a> | 
-<a href="./suppl_files/Fig1F_mat_zyg_utr3Len_pol2_st6to12p.csv">CSV</a> | 
-<a href="./suppl_files/Fig1F_mat_zyg_utr3Len_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
+<a href="./suppl_files/FigS1K_mat_zyg_utr3Len_pol2_st6to12p.pdf">PDF</a> | 
+<a href="./suppl_files/FigS1K_mat_zyg_utr3Len_pol2_st6to12p.csv">CSV</a> | 
+<a href="./suppl_files/FigS1K_mat_zyg_utr3Len_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
 
 ```{r 5\'UTR LENGTH, eval=FALSE}
 # 5'UTR LENGTH
@@ -2124,9 +2124,9 @@ sink()
 ```
 
 Download beeswarm plot showing 5'UTR length distribution (Figure S1K), metrics and Wilcoxon rank-sum test results: 
-<a href="./suppl_files/Fig1F_mat_zyg_utr5Len_pol2_st6to12p.pdf">PDF</a> | 
-<a href="./suppl_files/Fig1F_mat_zyg_utr5Len_pol2_st6to12p.csv">CSV</a> | 
-<a href="./suppl_files/Fig1F_mat_zyg_utr5Len_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
+<a href="./suppl_files/FigS1K_mat_zyg_utr5Len_pol2_st6to12p.pdf">PDF</a> | 
+<a href="./suppl_files/FigS1K_mat_zyg_utr5Len_pol2_st6to12p.csv">CSV</a> | 
+<a href="./suppl_files/FigS1K_mat_zyg_utr5Len_pol2_st6to12p_MWW_p_effectSize.txt">Wilcoxon</a>
 
 
 #### 2.13 Maternal and zygotic contributions to transcriptome
