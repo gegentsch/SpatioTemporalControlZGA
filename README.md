@@ -3801,7 +3801,7 @@ Download plots of mis-regulated genes (and percentage table of down-regulated ge
 
 ***
 
-**Strongest negative effect of Wnt, Nodal and BMP signals on ZGA** (Figure 4C)
+**Strongest negative effect of Wnt, Nodal and/or BMP LOF on ZGA** (Figure 4C)
 
 Download plots of mis-regulated genes (and percentage table of down-regulated genes) separated by time and space (along the animal-vegetal and dorso-ventral axes): 
 <a href="./suppl_files/minWNBLOF.pdf">summary</a> | 
@@ -3814,7 +3814,7 @@ Download plots of mis-regulated genes (and percentage table of down-regulated ge
 
 ***
 
-**Strongest positive effect of Wnt, Nodal and BMP signals on ZGA** (Figure 4D)
+**Strongest positive effect of Wnt, Nodal and/or BMP LOF on ZGA** (Figure 4D)
 
 Download plots of mis-regulated genes (and percentage table of up-regulated genes) separated by time and space (along the animal-vegetal and dorso-ventral axes): 
 <a href="./suppl_files/maxWNBLOF.pdf">summary</a> | 
