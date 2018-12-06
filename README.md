@@ -3347,7 +3347,7 @@ dev.off()
 Heatmap of hierarchically clustered gene expression levels in loss-of-function (LOF) embryos (Figure 2C) (from left to right column):
 (#1) alfa-amanitin, (#2) standard control MO, (#3) BMP LOF, (#4) Nodal LOF, (#5) Nodal/BMP LOF, (#6) Wnt LOF, (#7) Wnt/BMP LOF, (#8) Wnt/Nodal LOF, (#9) Wnt/Nodal/BMP LOF, (#10) maternal Pou5f3/Sox3 LOF, (#11) maternal VegT LOF, and (#12) quadruple LOF of zygotic T-box transcription factors.
 
-<p align="left"><img src="./suppl_files/Fig2C_LOF_RNA_OLOward.png" width="70%" height="300"></p>
+<p align="left"><img src="./suppl_files/Fig2C_LOF_RNA_OLOward.png" width="30%" height="600"></p>
 
 Download <a href="./suppl_files/Fig2C_LOF_RNA_OLOward.png">heatmap (PNG)</a>, <a href="./suppl_files/zga_lof_results.csv">differential ZGA results (CSV)</a> and <a href="./suppl_files/DiffExpr_colorbar.pdf">color bar of differential expression (PDF)</a>. 
 
