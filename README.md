@@ -6,11 +6,9 @@
 
 </p>
 
-**DISCLAIMER: This repository is under construction. A final version of it will be available in short order.**
-
 This repository contains the R code used to analyze deep sequencing data shown in:
 
-*Gentsch, G.E., Owens, N.D.L, and Smith, J.C. (2018). The Spatio-Temporal Control of Zygotic Genome Activation. BioRxiv 488056.*
+*Gentsch, G.E., Owens, N.D.L, and Smith, J.C. (2018). The Spatiotemporal Control of Zygotic Genome Activation. iScience 16, 485-498.*
 
   * [Data Availability](#data-availability)
   * [Figure Shortcuts](#figure-shortcuts)
