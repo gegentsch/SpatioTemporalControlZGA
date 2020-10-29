@@ -292,7 +292,7 @@ pol2.genebody.bins.e.st6to13 <- pol2.genebody.bins[ ,1:70 ] / pol2.genebody.bins
 
 #### 2.2  H3K4me3 and H3K36me3 densities
 
-Calculate the enrichment of H3K4me3 and H3K36me3 (Hontelez *et al.*, 2015) across gene bodies at the following developmental stages using normalised read density maps:
+Calculate the enrichment of H3K4me3 and H3K36me3 ([Hontelez *et al.*, 2015](https://www.nature.com/articles/ncomms10148)) across gene bodies at the following developmental stages using normalised read density maps:
 
 * 1,024-cell stage (H3K4me3 only)
 * Mid-blastula transition (MBT) (H3K4me3 and H3K36me3)
@@ -350,7 +350,7 @@ colnames(rzRNAbyGene.tpm) <- paste(substr(colnames(rzRNAbyGene.tpm),1,nchar(coln
 rzRNA.tpm <- as.data.frame(rzRNAbyGene.tpm)
 ```
 
-Intronic (riboZero) RNA profile corrected by spike-derived normalization factors (Owens *et al.*, 2016).
+Intronic (riboZero) RNA profile corrected by spike-derived normalization factors ([Owens *et al.*, 2016](https://www.cell.com/cell-reports/fulltext/S2211-1247(15)01491-6)).
 
 ```{r INTRONIC RNA, eval=FALSE}
 rzRNAi <- read.table("./RNA/rzRNA_intron_norm_xt71.txt.gz", header=TRUE, row.names="Gene")
@@ -361,7 +361,7 @@ rzRNAi <- rzRNAi / rowMeans(rzRNAi)
 rzRNAi[is.na(rzRNAi)] <- 0
 ```
 
-Intronic poly(A) RNA profile corrected by spike-derived normalization factors (Owens *et al.*, 2016).
+Intronic poly(A) RNA profile corrected by spike-derived normalization factors ([Owens *et al.*, 2016](https://www.cell.com/cell-reports/fulltext/S2211-1247(15)01491-6)).
 
 ```{r intron_paRNA, eval=FALSE}
 paRNAi <- read.table( "./RNA/paRNA_intron_norm_xt71.txt.gz", header=TRUE, row.names="Gene" )[,1:48]
@@ -452,7 +452,7 @@ rh.rna.gb <- merge( rh.rna, gb, by="row.names", all=FALSE )
 row.names(rh.rna.gb) <- rh.rna.gb$Row.names; rh.rna.gb <- rh.rna.gb[-1]
 ```
 
-We restricted the analysis to genes for which ≥3 transcripts per million (TPM) could be detected on average over three consecutive time points (i.e. over the developmental time of 1 h) of a high-resolution profile of total RNA (Owens *et al.*, 2016) from fertilization to after gastrulation (stage 13).
+We restricted the analysis to genes for which ≥3 transcripts per million (TPM) could be detected on average over three consecutive time points (i.e. over the developmental time of 1 h) of a high-resolution profile of total RNA ([Owens *et al.*, 2016](https://www.cell.com/cell-reports/fulltext/S2211-1247(15)01491-6)) from fertilization to after gastrulation (stage 13).
 
 ```{r TPM, eval=FALSE}
 t1 <- grep( "_0.0hpf.tpm", colnames(rh.rna.gb) )       
@@ -1204,7 +1204,7 @@ zga.6to12p.zyg.mat.features$mean.intron.length <- ifelse(
 
 #### 2.10 Regional gene expression
 
-Add spatial gene expression data (Blitz *et al.*, 2017) using both exonic and intronic read counts. Paired-end reads were aligned to the *X. tropicalis* genome assembly v7.1 using [STAR](https://github.com/alexdobin/STAR) with default settings and a revised version of gene models v7.2 to improve mapping accuracy across splice junctions. The alignments were sorted by read name using the sort function of [samtools](http://www.htslib.org). EXON and INTRON counts (-t 'exon;intron') were extracted from unstranded (-s 0) alignment files using [VERSE](https://github.com/qinzhu/VERSE) in featureCounts (default) mode (-z 0). Intron coordinates were adjusted to exclude any overlap with exon annotation.
+Add spatial gene expression data ([Blitz *et al.*, 2017](https://www.sciencedirect.com/science/article/pii/S001216061630118X?via%3Dihub)) using both exonic and intronic read counts. Paired-end reads were aligned to the *X. tropicalis* genome assembly v7.1 using [STAR](https://github.com/alexdobin/STAR) with default settings and a revised version of gene models v7.2 to improve mapping accuracy across splice junctions. The alignments were sorted by read name using the sort function of [samtools](http://www.htslib.org). EXON and INTRON counts (-t 'exon;intron') were extracted from unstranded (-s 0) alignment files using [VERSE](https://github.com/qinzhu/VERSE) in featureCounts (default) mode (-z 0). Intron coordinates were adjusted to exclude any overlap with exon annotation.
 
 ```{r SPATIAL INFORMATION, eval=FALSE}
 id.name             <- data.frame( elementMetadata( gff3_gene )$ID, elementMetadata( gff3_gene )$Name )
