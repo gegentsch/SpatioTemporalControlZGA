@@ -268,7 +268,7 @@ ChIP-Seq reads of maximal 50 bases were processed using [trim_galore](https://ww
 
 *makeTagDirectory -single -tbp 1 -unique -mapq 10 -fragLength 175 -totalReads all*
 
-Only uniquely aligned reads (i.e. MAPQ ≥10) were processed. We pooled all input alignments from various developmental stages ([Gentsch *et al.*, 2018](https://www.biorxiv.org/content/early/2018/04/23/306803)). This created a comprehensive mappability profile or high-complexity input that covered ~400 million unique base pair positions.
+Only uniquely aligned reads (i.e. MAPQ ≥10) were processed. We pooled all input alignments from various developmental stages ([Gentsch *et al.*, 2019](https://www.nature.com/articles/s41467-019-12263-w)). This created a comprehensive mappability profile or high-complexity input that covered ~400 million unique base pair positions.
 
 Normalized RNAPII and input tag densities were calculated across the gene body in 10 bins of equal size. Gene annotations v7.1 were altered based on a few known zygotic isoforms and some corrections obtained from assembling total and poly(A) RNA ([Owens *et al.*, 2016](https://www.cell.com/cell-reports/fulltext/S2211-1247(15)01491-6)) from stage 6 to stage 12.5 *de novo* ([Pertea *et al.*, 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5032908/)). A few genes had previously been annotated as gene clusters due to assembly uncertainties. We reduced the annotation of polycistronic MIR-427 to the minus arm (scaffold_3b:3516900-3523400) and only monitored nodal3.5 and nodal5.3 within their respective gene clusters.
 
